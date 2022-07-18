@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/order_management"
+        android:icon="@drawable/ic_baseline_article_24"
+        android:title="@string/title_order" />
+    <!--    <item-->
+    <!--        android:id="@+id/voucher_management"-->
+    <!--        android:icon="@drawable/ic_baseline_sticky_note_2_24"-->
+    <!--        android:title="@string/title_voucher" />-->
+    <!--    <item-->
+    <!--        android:id="@+id/sale_management"-->
+    <!--        android:icon="@drawable/ic_baseline_star_rate_24"-->
+    <!--        android:title="@string/title_sale" />-->
+    <item
+        android:id="@+id/customer_management"
+        android:icon="@drawable/ic_baseline_supervised_user_circle_24"
+        android:title="@string/title_customer" />
+    <item
+        android:id="@+id/food_management"
+        android:icon="@drawable/ic_baseline_fastfood_24"
+        android:title="@string/title_food" />
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/user_icon"
+        android:title="Cá nhân" />
+</menu>

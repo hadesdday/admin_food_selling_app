@@ -1,9 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Food Admin</string>
-    <string name="title_home">Trang chủ</string>
-    <string name="title_order">Hóa đơn</string>
-    <string name="title_voucher">Voucher</string>
     <string name="title_sale">Sale</string>
+    <string name="title_order">Hóa đơn</string>
+    <string name="title_home">Trang chủ</string>
     <string name="title_customer">Khách hàng</string>
+    <string name="title_voucher">Voucher</string>
     <string name="title_food">Món ăn</string>
 </resources>

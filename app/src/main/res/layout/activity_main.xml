@@ -139,13 +139,13 @@
             android:textSize="16sp" />
 
         <Button
-            android:id="@+id/recoverPassword"
+            android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/layout_btn"
+            android:background="#dd7973"
             android:text="đăng nhập"
             android:textColor="#F6F4F4" />
 
