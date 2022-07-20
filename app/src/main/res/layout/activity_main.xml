@@ -113,10 +113,11 @@
                 android:layout_marginStart="10dp"
                 android:ems="10"
                 android:hint="Password"
-                android:inputType="textPersonName"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:inputType="textPassword"
+                />
 
             <ImageView
                 android:id="@+id/imageView5"
