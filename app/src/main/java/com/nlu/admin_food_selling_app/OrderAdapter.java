@@ -15,10 +15,10 @@ import com.nlu.admin_food_selling_app.data.model.Order;
 import java.util.ArrayList;
 
 public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder> {
-    ArrayList<Order> orderList;
+    static ArrayList<Order> orderList;
 
-    static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txtOrderId, txtOrderPrice, txtOrderDate, txtOrderStatus;
+    static class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView txtOrderId, txtOrderPrice, txtOrderDate, txtOrderStatus, txtCustomerId, txtPaymentMethod;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -26,6 +26,16 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             txtOrderPrice = itemView.findViewById(R.id.txtOrderPrice);
             txtOrderDate = itemView.findViewById(R.id.txtOrderDate);
             txtOrderStatus = itemView.findViewById(R.id.txtOrderStatus);
+            txtCustomerId = itemView.findViewById(R.id.txtOrderCustomerId);
+            txtPaymentMethod = itemView.findViewById(R.id.txtOrderPaymentMethod);
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getLayoutPosition();
+            Order o = orderList.get(position);
+            Toast.makeText(view.getContext(), o.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -45,6 +55,8 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
         holder.txtOrderPrice.setText(String.valueOf(orderList.get(position).getTotalPrice()));
         holder.txtOrderStatus.setText(Integer.toString(orderList.get(position).getStatus()));
         holder.txtOrderDate.setText(orderList.get(position).getDate());
+        holder.txtCustomerId.setText(Integer.toString(orderList.get(position).getCustomerId()));
+        holder.txtPaymentMethod.setText(orderList.get(position).getPaymentMethod());
     }
 
     @Override

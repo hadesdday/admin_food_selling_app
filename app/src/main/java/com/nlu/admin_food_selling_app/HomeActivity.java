@@ -79,6 +79,7 @@ public class HomeActivity extends AppCompatActivity {
         }
         getSupportFragmentManager().beginTransaction()
                 .setReorderingAllowed(true)
+                .setCustomAnimations(R.anim.enter_from_left, R.anim.exit_to_right, R.anim.enter_from_right, R.anim.exit_to_left)
                 .add(R.id.fragment_container_view, fragment, null)
                 .commit();
     }

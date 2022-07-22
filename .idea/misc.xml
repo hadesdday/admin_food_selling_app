@@ -4,22 +4,29 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1135" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/ad.xml" value="0.2085" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/enter_from_left.xml" value="0.2085" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1135" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/shadow_drawable.xml" value="0.21" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/transparent_background.xml" value="0.21" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_order.xml" value="0.264" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_confirm_modal.xml" value="0.13240740740740742" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_lost_password.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_order.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search.xml" value="0.23822463768115942" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_result.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_sent_recovery_code.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_test.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/back_button.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/bottom_nav_bar.xml" value="0.24094202898550723" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/dropdown.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_bottom_app_bar.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_customer.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_food.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_my_account.xml" value="0.24094202898550723" />
-        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_order.xml" value="0.176" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_order.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_statistic.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/order_row.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_article_24.xml" value="0.21" />
@@ -32,6 +39,7 @@
         <entry key="..\:/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/layout_btn.xml" value="0.2205" />
         <entry key="..\:/Android Studio Workspace/admin_food_selling_app/app/src/main/res/font/fonts.xml" value="0.3046875" />
         <entry key="..\:/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_main.xml" value="0.2535211267605634" />
+        <entry key="..\:/Users/PC/AppData/Local/Temp/drawable-temp/fake_of_awd.xml" value="0.2085" />
       </map>
     </option>
   </component>
