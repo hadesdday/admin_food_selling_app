@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Order implements Serializable {
     private int id;
+    private int customerId;
     private String date;
     private double totalPrice;
     private String phoneNumber;
@@ -14,8 +15,9 @@ public class Order implements Serializable {
     public Order() {
     }
 
-    public Order(int id, String date, double totalPrice, String phoneNumber, String address, String paymentMethod, int status) {
+    public Order(int id, int customerId, String date, double totalPrice, String phoneNumber, String address, String paymentMethod, int status) {
         this.id = id;
+        this.customerId = customerId;
         this.date = date;
         this.totalPrice = totalPrice;
         this.phoneNumber = phoneNumber;
@@ -30,6 +32,14 @@ public class Order implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
     public String getDate() {
@@ -84,6 +94,7 @@ public class Order implements Serializable {
     public String toString() {
         return "Order{" +
                 "id=" + id +
+                ", customerId=" + customerId +
                 ", date='" + date + '\'' +
                 ", totalPrice=" + totalPrice +
                 ", phoneNumber='" + phoneNumber + '\'' +
