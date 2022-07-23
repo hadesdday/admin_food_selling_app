@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class OrderFragment extends Fragment {
     ArrayList<Order> orderList;
     ImageView plusAction, searchAction;
+    View noDataView;
 
     public OrderFragment() {
     }
@@ -33,10 +34,20 @@ public class OrderFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_order, container, false);
+
+        noDataView = v.findViewById(R.id.noDataView);
+
         RecyclerView recyclerView = v.findViewById(R.id.orderRecyclerView);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         recyclerView.setAdapter(new OrderAdapter(orderList));
-
+        if (orderList.isEmpty()) {
+            recyclerView.setVisibility(View.GONE);
+            noDataView.setVisibility(View.VISIBLE);
+        } else {
+            recyclerView.setVisibility(View.VISIBLE);
+            noDataView.setVisibility(View.GONE);
+        }
         SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshOrderView);
         pullToRefresh.setOnRefreshListener(() -> {
             //reload data here

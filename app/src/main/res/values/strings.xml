@@ -7,8 +7,8 @@
     <string name="title_customer">Khách hàng</string>
     <string name="title_food">Món ăn</string>
     <string name="status_title" translatable="false">Trạng thái hóa đơn</string>
-    <string name="required_payment_method">Chọn phương thức thanh toán</string>
-    <string name="title_payment_method">Phương thức thanh toán</string>
+    <string name="required_payment_method" translatable="false">Chọn phương thức thanh toán</string>
+    <string name="title_payment_method" translatable="false">Phương thức thanh toán</string>
     <string-array name="payment_method_entries">
         <item>COD</item>
         <item>Bank</item>
@@ -19,8 +19,8 @@
         <item>Đã hủy</item>
     </string-array>
     <string-array name="order_status_values">
-        <item>Đang giao</item>
-        <item>Đã giao</item>
-        <item>Đã hủy</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
     </string-array>
 </resources>
