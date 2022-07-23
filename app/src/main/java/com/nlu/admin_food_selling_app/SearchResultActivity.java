@@ -49,7 +49,7 @@ public class SearchResultActivity extends AppCompatActivity {
             noSearchDataView.setVisibility(View.GONE);
         }
 
-        finishSearch = findViewById(R.id.finishSearch);
+        finishSearch = findViewById(R.id.finishOrderDetails);
         finishSearch.setOnClickListener(view -> {
             this.finish();
         });

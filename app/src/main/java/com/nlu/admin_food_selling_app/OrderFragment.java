@@ -78,7 +78,7 @@ public class OrderFragment extends Fragment {
 
     private void createTempList() {
         orderList.add(new Order(1, 2, "21/10/2022", 123123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(2, 3, "22/10/2022", 223123, "09876654321", "o nha", "momo", 1));
+        orderList.add(new Order(2, 3, "22/10/2022", 223123, "09876654321", "o nha", "momo", 2));
         orderList.add(new Order(3, 4, "23/10/2022", 323123, "09876654321", "o nha", "momo", 1));
         orderList.add(new Order(4, 5, "24/10/2022", 423123, "09876654321", "o nha", "momo", 1));
         orderList.add(new Order(5, 6, "25/10/2022", 53123, "09876654321", "o nha", "momo", 1));
