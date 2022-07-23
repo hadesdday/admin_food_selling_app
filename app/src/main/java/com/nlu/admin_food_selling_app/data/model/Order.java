@@ -1,8 +1,9 @@
 package com.nlu.admin_food_selling_app.data.model;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Order implements Serializable {
+public class Order implements Parcelable {
     private int id;
     private int customerId;
     private String date;
@@ -25,6 +26,29 @@ public class Order implements Serializable {
         this.paymentMethod = paymentMethod;
         this.status = status;
     }
+
+    protected Order(Parcel in) {
+        id = in.readInt();
+        customerId = in.readInt();
+        date = in.readString();
+        totalPrice = in.readDouble();
+        phoneNumber = in.readString();
+        address = in.readString();
+        paymentMethod = in.readString();
+        status = in.readInt();
+    }
+
+    public static final Creator<Order> CREATOR = new Creator<Order>() {
+        @Override
+        public Order createFromParcel(Parcel in) {
+            return new Order(in);
+        }
+
+        @Override
+        public Order[] newArray(int size) {
+            return new Order[size];
+        }
+    };
 
     public int getId() {
         return id;
@@ -102,5 +126,22 @@ public class Order implements Serializable {
                 ", paymentMethod='" + paymentMethod + '\'' +
                 ", status=" + status +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeInt(customerId);
+        parcel.writeString(date);
+        parcel.writeDouble(totalPrice);
+        parcel.writeString(phoneNumber);
+        parcel.writeString(address);
+        parcel.writeString(paymentMethod);
+        parcel.writeInt(status);
     }
 }

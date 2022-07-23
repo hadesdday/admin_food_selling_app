@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Admin_food_selling_app">
         <activity
+            android:name=".OrderDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SearchResultActivity"
             android:exported="false" />
         <activity
