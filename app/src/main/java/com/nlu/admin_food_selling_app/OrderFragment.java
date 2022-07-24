@@ -28,7 +28,6 @@ public class OrderFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         orderList = new ArrayList<>();
-        createTempList();
     }
 
     @Override
@@ -36,11 +35,10 @@ public class OrderFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_order, container, false);
 
         noDataView = v.findViewById(R.id.noDataView);
-
         RecyclerView recyclerView = v.findViewById(R.id.orderRecyclerView);
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        recyclerView.setAdapter(new OrderAdapter(orderList));
+        OrderAdapter adapter = new OrderAdapter(orderList);
+        recyclerView.setAdapter(adapter);
         if (orderList.isEmpty()) {
             recyclerView.setVisibility(View.GONE);
             noDataView.setVisibility(View.VISIBLE);
@@ -51,6 +49,9 @@ public class OrderFragment extends Fragment {
         SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshOrderView);
         pullToRefresh.setOnRefreshListener(() -> {
             //reload data here
+            orderList = new ArrayList<>();
+            adapter.notifyDataSetChanged();
+//            recyclerView.notify();
             pullToRefresh.setRefreshing(false);
         });
 
@@ -74,22 +75,5 @@ public class OrderFragment extends Fragment {
     public void openSearchOrderView() {
         Intent intent = new Intent(getActivity(), SearchActivity.class);
         startActivity(intent);
-    }
-
-    private void createTempList() {
-        orderList.add(new Order(1, 2, "21/10/2022", 123123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(2, 3, "22/10/2022", 223123, "09876654321", "o nha", "momo", 2));
-        orderList.add(new Order(3, 4, "23/10/2022", 323123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(4, 5, "24/10/2022", 423123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(5, 6, "25/10/2022", 53123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(6, 7, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(7, 8, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(8, 9, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(9, 10, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(10, 11, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(11, 12, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(12, 13, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(13, 14, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
-        orderList.add(new Order(14, 15, "26/10/2022", 623123, "09876654321", "o nha", "momo", 1));
     }
 }
