@@ -1,13 +1,14 @@
 package com.nlu.admin_food_selling_app.data.model;
 
-import java.io.Serializable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class Customer implements Serializable {
-    int id;
-    String name;
-    String address;
-    String phoneNumber;
-    String username;
+public class Customer implements Parcelable {
+    private int id;
+    private String name;
+    private String address;
+    private String phoneNumber;
+    private String username;
 
     public Customer() {
     }
@@ -19,6 +20,40 @@ public class Customer implements Serializable {
         this.phoneNumber = phoneNumber;
         this.username = username;
     }
+
+    protected Customer(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        address = in.readString();
+        phoneNumber = in.readString();
+        username = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(address);
+        dest.writeString(phoneNumber);
+        dest.writeString(username);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
+        @Override
+        public Customer createFromParcel(Parcel in) {
+            return new Customer(in);
+        }
+
+        @Override
+        public Customer[] newArray(int size) {
+            return new Customer[size];
+        }
+    };
 
     public int getId() {
         return id;

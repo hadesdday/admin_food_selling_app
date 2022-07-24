@@ -8,32 +8,34 @@ public class Order implements Parcelable {
     private int customerId;
     private String date;
     private double totalPrice;
-    private String phoneNumber;
-    private String address;
     private String paymentMethod;
     private int status;
+    private String voucher;
 
     public Order() {
     }
 
-    public Order(int id, int customerId, String date, double totalPrice, String phoneNumber, String address, String paymentMethod, int status) {
-        this.id = id;
+    public String getVoucher() {
+        return voucher;
+    }
+
+    public void setVoucher(String voucher) {
+        this.voucher = voucher;
+    }
+
+    public Order(int customerId, double totalPrice, String paymentMethod, int status,String voucher) {
         this.customerId = customerId;
-        this.date = date;
         this.totalPrice = totalPrice;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
         this.paymentMethod = paymentMethod;
         this.status = status;
+        this.voucher = voucher;
     }
+
 
     protected Order(Parcel in) {
         id = in.readInt();
         customerId = in.readInt();
-        date = in.readString();
         totalPrice = in.readDouble();
-        phoneNumber = in.readString();
-        address = in.readString();
         paymentMethod = in.readString();
         status = in.readInt();
     }
@@ -49,6 +51,31 @@ public class Order implements Parcelable {
             return new Order[size];
         }
     };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeInt(id);
+        parcel.writeInt(customerId);
+        parcel.writeDouble(totalPrice);
+        parcel.writeString(paymentMethod);
+        parcel.writeInt(status);
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", customerId=" + customerId +
+                ", totalPrice=" + totalPrice +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                ", status=" + status +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -82,22 +109,6 @@ public class Order implements Parcelable {
         this.totalPrice = totalPrice;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
     public String getPaymentMethod() {
         return paymentMethod;
     }
@@ -114,34 +125,7 @@ public class Order implements Parcelable {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", customerId=" + customerId +
-                ", date='" + date + '\'' +
-                ", totalPrice=" + totalPrice +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", address='" + address + '\'' +
-                ", paymentMethod='" + paymentMethod + '\'' +
-                ", status=" + status +
-                '}';
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeInt(id);
-        parcel.writeInt(customerId);
-        parcel.writeString(date);
-        parcel.writeDouble(totalPrice);
-        parcel.writeString(phoneNumber);
-        parcel.writeString(address);
-        parcel.writeString(paymentMethod);
-        parcel.writeInt(status);
+    public static Creator<Order> getCREATOR() {
+        return CREATOR;
     }
 }
