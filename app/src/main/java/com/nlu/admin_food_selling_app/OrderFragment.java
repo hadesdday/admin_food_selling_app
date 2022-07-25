@@ -127,8 +127,7 @@ public class OrderFragment extends Fragment {
 
             SoapObject responseList = (SoapObject) envelope.getResponse();
             int count = responseList.getPropertyCount();
-            System.out.println("count " + count);
-            for (int i = 0; i <= count; i++) {
+            for (int i = 0; i < count; i++) {
                 SoapObject bill = (SoapObject) responseList.getProperty(i);
                 int id = GetVariable.getIntFormat(String.valueOf(bill.getProperty("Id")));
                 String voucher = "";
@@ -147,10 +146,9 @@ public class OrderFragment extends Fragment {
                 order.setId(id);
                 order.setDate(date);
                 orderList.add(order);
-                System.out.println("index : " + i + " " + order.toString());
             }
         } catch (Exception e) {
-            System.out.println("loi cmnr " + e.getMessage());
+            System.out.println(e);
         }
     }
 
