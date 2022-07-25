@@ -29,7 +29,6 @@ public class AddNewOrder extends AppCompatActivity {
     Spinner aoPaymentMethod, aoOrderStatus;
     ImageView cancelAction;
     TextView submitNewOrder, aoCustomerId, aoTotalPrice, aoVoucher;
-    boolean responseStatus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +65,6 @@ public class AddNewOrder extends AppCompatActivity {
         });
 
         submitNewOrder.setOnClickListener(view -> {
-//            try {
             int customerId = Integer.parseInt(String.valueOf(aoCustomerId.getText()));
             double totalPrice = Double.parseDouble(String.valueOf(aoTotalPrice.getText()));
             String paymentMethod = (String) aoPaymentMethod.getSelectedItem();
@@ -76,16 +74,16 @@ public class AddNewOrder extends AppCompatActivity {
 
             Order order = new Order(customerId, totalPrice, paymentMethod, status, voucherId);
 
-            new OrderServices().execute(order);
+            new AddNewOrderService().execute(order);
         });
     }
 
-    private class OrderServices extends AsyncTask<Order, Boolean, Boolean> {
+    private class AddNewOrderService extends AsyncTask<Order, Boolean, Boolean> {
         private ProgressDialog dialog = new ProgressDialog(AddNewOrder.this);
 
         @Override
         protected void onPreExecute() {
-            dialog.setMessage("Executing...");
+            dialog.setMessage("Vui lòng chờ");
             dialog.show();
         }
 
@@ -135,9 +133,7 @@ public class AddNewOrder extends AppCompatActivity {
             HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
             androidHttpTransport.call(SOAP_ACTION, envelope);
 
-            SoapPrimitive soapPrimitive = null;
-
-            soapPrimitive = (SoapPrimitive) envelope.getResponse();
+            SoapPrimitive soapPrimitive = (SoapPrimitive) envelope.getResponse();
 
             boolean responseStatus = Boolean.parseBoolean(soapPrimitive.toString());
             return responseStatus;

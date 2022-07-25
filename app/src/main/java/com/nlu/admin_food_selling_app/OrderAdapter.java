@@ -37,6 +37,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
             Order o = orderList.get(position);
             Intent intent = new Intent(view.getContext(), OrderDetailsActivity.class);
             Bundle bundle = new Bundle();
+            bundle.putString("date", String.valueOf(txtOrderDate.getText()));
             bundle.putParcelable("order", o);
             intent.putExtra("orderBundles", bundle);
 
