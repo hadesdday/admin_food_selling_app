@@ -1,6 +1,6 @@
 package com.nlu.admin_food_selling_app;
 
-import android.app.ProgressDialog;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.amrdeveloper.lottiedialog.LottieDialog;
 import com.nlu.admin_food_selling_app.data.model.Order;
 import com.nlu.admin_food_selling_app.helper.GetVariable;
 
@@ -39,6 +40,15 @@ public class OrderFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        orderList = new ArrayList<>();
+        adapter = new OrderAdapter(orderList);
+        recyclerView.setAdapter(adapter);
+        getOrderList(0);
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
@@ -55,7 +65,7 @@ public class OrderFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new OrderAdapter(orderList);
         recyclerView.setAdapter(adapter);
-
+        System.out.println("created order fragment view");
         getOrderList(0);
 
 //        SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshOrderView);
@@ -77,13 +87,17 @@ public class OrderFragment extends Fragment {
         return v;
     }
 
+    @SuppressLint("StaticFieldLeak")
     public void getOrderList(int id) {
         AsyncTask<Integer, Void, Void> task = new AsyncTask<Integer, Void, Void>() {
-            private ProgressDialog dialog = new ProgressDialog(OrderFragment.this.getContext());
+            private final LottieDialog dialog = new LottieDialog(OrderFragment.this.getContext());
 
             @Override
             protected void onPreExecute() {
+                dialog.setAnimation(R.raw.loading);
+                dialog.setAnimationRepeatCount(LottieDialog.INFINITE);
                 dialog.setMessage("Vui lòng chờ");
+                dialog.setAutoPlayAnimation(true);
                 dialog.show();
             }
 
@@ -108,7 +122,7 @@ public class OrderFragment extends Fragment {
                 adapter.notifyDataSetChanged();
             }
         };
-        task.execute(id);
+        task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, id);
     }
 
 
@@ -127,6 +141,7 @@ public class OrderFragment extends Fragment {
 
             SoapObject responseList = (SoapObject) envelope.getResponse();
             int count = responseList.getPropertyCount();
+            orderList.clear();
             for (int i = 0; i < count; i++) {
                 SoapObject bill = (SoapObject) responseList.getProperty(i);
                 int id = GetVariable.getIntFormat(String.valueOf(bill.getProperty("Id")));

@@ -1,17 +1,14 @@
 package com.nlu.admin_food_selling_app;
 
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-
-import android.os.Bundle;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -54,17 +51,6 @@ public class HomeActivity extends AppCompatActivity {
         } catch (Exception e) {
             System.out.println(e);
             return false;
-        }
-    }
-
-    public void destroyAllFragment() {
-        try {
-            List<Fragment> fragmentList = getSupportFragmentManager().getFragments();
-            if (fragmentList.size() > 0) {
-                destroyFragment(fragmentList.get(0));
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 
