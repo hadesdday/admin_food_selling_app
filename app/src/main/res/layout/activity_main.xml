@@ -146,7 +146,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
-            android:background="#dd7973"
+            android:background="@drawable/btn_ripple"
             android:text="đăng nhập"
             android:textColor="#F6F4F4" />
 

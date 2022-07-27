@@ -1,7 +1,6 @@
 package com.nlu.admin_food_selling_app;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -12,6 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.amrdeveloper.lottiedialog.LottieDialog;
 import com.nlu.admin_food_selling_app.data.model.Order;
 
 import org.ksoap2.SoapEnvelope;
@@ -79,11 +79,14 @@ public class AddNewOrder extends AppCompatActivity {
     }
 
     private class AddNewOrderService extends AsyncTask<Order, Boolean, Boolean> {
-        private ProgressDialog dialog = new ProgressDialog(AddNewOrder.this);
+        private final LottieDialog dialog = new LottieDialog(AddNewOrder.this);
 
         @Override
         protected void onPreExecute() {
+            dialog.setAnimation(R.raw.loading);
+            dialog.setAnimationRepeatCount(LottieDialog.INFINITE);
             dialog.setMessage("Vui lòng chờ");
+            dialog.setAutoPlayAnimation(true);
             dialog.show();
         }
 
