@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.ui.view.customer.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,8 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
-import com.nlu.admin_food_selling_app.data.model.Order;
+import com.nlu.admin_food_selling_app.R;
+import com.nlu.admin_food_selling_app.data.model.Customer;
 import com.nlu.admin_food_selling_app.helper.GetVariable;
+import com.nlu.admin_food_selling_app.ui.view.customer.adapter.CustomerAdapter;
+import com.nlu.admin_food_selling_app.ui.view.customer_information.activity.AddNewCustomerActivity;
+import com.nlu.admin_food_selling_app.ui.view.customer_information.activity.SearchCustomer;
+import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -24,28 +29,29 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
 
-public class OrderFragment extends Fragment {
-    ArrayList<Order> orderList;
+public class CustomerFragment extends Fragment {
+
+    ArrayList<Customer> customerList;
     ImageView plusAction, searchAction;
     View noDataView;
     RecyclerView recyclerView;
-    OrderAdapter adapter;
+    CustomerAdapter adapter;
 
     private static String URL = "";
     private static final String NAME_SPACE = "http://tempuri.org/";
-    private static final String METHOD_NAME = "GetBillList";
+    private static final String METHOD_NAME = "GetCustomerList";
     private static final String SOAP_ACTION = "http://tempuri.org/" + METHOD_NAME;
 
-    public OrderFragment() {
+    public CustomerFragment() {
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        orderList = new ArrayList<>();
-        adapter = new OrderAdapter(orderList);
+        customerList = new ArrayList<>();
+        adapter = new CustomerAdapter(customerList);
         recyclerView.setAdapter(adapter);
-        getOrderList(0);
+        getCustomerList(0);
     }
 
     @Override
@@ -55,42 +61,41 @@ public class OrderFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_order, container, false);
+        View v = inflater.inflate(R.layout.fragment_customer, container, false);
         URL = getResources().getString(R.string.API_URL);
 
-        noDataView = v.findViewById(R.id.noDataView);
+        noDataView = v.findViewById(R.id.cNoDataView);
 
-        orderList = new ArrayList<>();
-        recyclerView = (RecyclerView) v.findViewById(R.id.orderRecyclerView);
+        customerList = new ArrayList<>();
+        recyclerView = (RecyclerView) v.findViewById(R.id.customerRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
-        adapter = new OrderAdapter(orderList);
+        adapter = new CustomerAdapter(customerList);
         recyclerView.setAdapter(adapter);
-        System.out.println("created order fragment view");
-        getOrderList(0);
+        getCustomerList(0);
 
-//        SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshOrderView);
+//        SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshCustomerView);
 //        pullToRefresh.setOnRefreshListener(() -> {
-//            getOrderList();
+//            getCustomerList();
 //            adapter.notifyDataSetChanged();
 //            pullToRefresh.setRefreshing(true);
 //        });
 
-        plusAction = v.findViewById(R.id.plusAction);
+        plusAction = v.findViewById(R.id.cPlusAction);
         plusAction.setOnClickListener(view -> {
-            openAddOrderView();
+            openAddCustomerView();
         });
 
         searchAction = v.findViewById(R.id.searchAct);
         searchAction.setOnClickListener(view -> {
-            openSearchOrderView();
+            openSearchCustomerView();
         });
         return v;
     }
 
     @SuppressLint("StaticFieldLeak")
-    public void getOrderList(int id) {
+    public void getCustomerList(int id) {
         AsyncTask<Integer, Void, Void> task = new AsyncTask<Integer, Void, Void>() {
-            private final LottieDialog dialog = new LottieDialog(OrderFragment.this.getContext());
+            private final LottieDialog dialog = new LottieDialog(CustomerFragment.this.getContext());
 
             @Override
             protected void onPreExecute() {
@@ -103,7 +108,7 @@ public class OrderFragment extends Fragment {
 
             @Override
             protected Void doInBackground(Integer... integers) {
-                getOrderList();
+                getCustomerList();
                 return null;
             }
 
@@ -112,7 +117,7 @@ public class OrderFragment extends Fragment {
                 if (dialog.isShowing()) {
                     dialog.dismiss();
                 }
-                if (orderList.isEmpty()) {
+                if (customerList.isEmpty()) {
                     recyclerView.setVisibility(View.GONE);
                     noDataView.setVisibility(View.VISIBLE);
                 } else {
@@ -126,7 +131,7 @@ public class OrderFragment extends Fragment {
     }
 
 
-    public void getOrderList() {
+    public void getCustomerList() {
         try {
             SoapObject request = new SoapObject(NAME_SPACE, METHOD_NAME);
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
@@ -141,39 +146,48 @@ public class OrderFragment extends Fragment {
 
             SoapObject responseList = (SoapObject) envelope.getResponse();
             int count = responseList.getPropertyCount();
-            orderList.clear();
+            customerList.clear();
             for (int i = 0; i < count; i++) {
-                SoapObject bill = (SoapObject) responseList.getProperty(i);
-                int id = GetVariable.getIntFormat(String.valueOf(bill.getProperty("Id")));
-                String voucher = "";
-                try {
-                    voucher = String.valueOf(bill.getProperty("Voucher"));
-                } catch (Exception e) {
-                    voucher = "";
-                }
-                int customerId = GetVariable.getIntFormat(String.valueOf(bill.getProperty("CustomerId")));
-                double price = GetVariable.getDoubleFormat(String.valueOf(bill.getProperty("Price")));
-                String paymentMethod = String.valueOf(bill.getProperty("PaymentMethod"));
-                int status = GetVariable.getIntFormat(String.valueOf(bill.getProperty("Status")));
-                String date = String.valueOf(bill.getProperty("CreatedAt"));
+                SoapObject customer = (SoapObject) responseList.getProperty(i);
+                int id = GetVariable.getIntFormat(String.valueOf(customer.getProperty("Id")));
+                String name, address, phone, username = "";
 
-                Order order = new Order(customerId, price, paymentMethod, status, voucher);
-                order.setId(id);
-                order.setDate(date);
-                orderList.add(order);
+                try {
+                    name = String.valueOf(customer.getProperty("Name"));
+                } catch (Exception e) {
+                    name = "";
+                }
+                try {
+                    address = String.valueOf(customer.getProperty("Address"));
+                } catch (Exception e) {
+                    address = "";
+                }
+                try {
+                    phone = String.valueOf(customer.getProperty("Phone"));
+                } catch (Exception e) {
+                    phone = "";
+                }
+                try {
+                    username = String.valueOf(customer.getProperty("Username"));
+                } catch (Exception e) {
+                    username = "";
+                }
+
+                Customer re = new Customer(id, name, address, phone, username);
+                customerList.add(re);
             }
         } catch (Exception e) {
             System.out.println(e);
         }
     }
 
-    public void openAddOrderView() {
-        Intent intent = new Intent(getActivity(), AddNewOrder.class);
+    public void openAddCustomerView() {
+        Intent intent = new Intent(getActivity(), AddNewCustomerActivity.class);
         startActivity(intent);
     }
 
-    public void openSearchOrderView() {
-        Intent intent = new Intent(getActivity(), SearchActivity.class);
+    public void openSearchCustomerView() {
+        Intent intent = new Intent(getActivity(), SearchCustomer.class);
         startActivity(intent);
     }
 }

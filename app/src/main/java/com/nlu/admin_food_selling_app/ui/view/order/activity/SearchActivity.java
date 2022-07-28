@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.ui.view.order.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.nlu.admin_food_selling_app.R;
 
 public class SearchActivity extends AppCompatActivity {
     ImageView finishSearch;
@@ -18,7 +20,7 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        finishSearch = findViewById(R.id.finishOrderDetails);
+        finishSearch = findViewById(R.id.finishSearchOrder);
         applySearch = findViewById(R.id.applySearch);
         customerId = findViewById(R.id.sCustomerId);
 

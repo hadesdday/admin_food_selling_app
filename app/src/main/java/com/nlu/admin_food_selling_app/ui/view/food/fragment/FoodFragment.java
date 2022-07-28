@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.ui.view.food.fragment;
 
 import android.os.Bundle;
 
@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.nlu.admin_food_selling_app.R;
 
 /**
  * A simple {@link Fragment} subclass.

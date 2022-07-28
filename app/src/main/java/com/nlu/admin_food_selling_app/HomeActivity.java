@@ -7,6 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.nlu.admin_food_selling_app.ui.view.account.fragment.MyAccountFragment;
+import com.nlu.admin_food_selling_app.ui.view.customer.fragment.CustomerFragment;
+import com.nlu.admin_food_selling_app.ui.view.food.fragment.FoodFragment;
+import com.nlu.admin_food_selling_app.ui.view.order.fragment.OrderFragment;
 
 import java.util.List;
 
