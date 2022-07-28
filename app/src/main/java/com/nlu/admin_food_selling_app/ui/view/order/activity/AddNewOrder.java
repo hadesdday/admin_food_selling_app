@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.ui.view.order.activity;
 
 import android.app.AlertDialog;
 import android.os.AsyncTask;
@@ -12,6 +12,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
+import com.nlu.admin_food_selling_app.utils.MarshalDouble;
+import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Order;
 
 import org.ksoap2.SoapEnvelope;

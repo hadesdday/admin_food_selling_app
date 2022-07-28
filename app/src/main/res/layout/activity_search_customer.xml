@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.view.order.activity.SearchActivity">
-
+    tools:context=".ui.view.customer_information.activity.SearchCustomer">
     <LinearLayout
         android:id="@+id/firstRow"
         android:layout_width="match_parent"
@@ -17,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/finishSearchOrderResult"
+            android:id="@+id/finishSearchCustomer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center|start"
@@ -28,7 +27,7 @@
 
         <TextView
             android:id="@+id/searchKeywordTitle"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center|start"
@@ -36,41 +35,41 @@
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
 
+        <TextView
+            android:id="@+id/applySearch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_weight="1"
+            android:gravity="center|end"
+            android:text="Áp dụng"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/searchResultList"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingBottom="120dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:text="Tìm kiếm"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/firstRow" />
 
-    <LinearLayout
-        android:id="@+id/noSearchDataView"
+    <EditText
+        android:id="@+id/sCustomerSearchKeyword"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:orientation="vertical"
-        android:visibility="gone"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:ems="10"
+        android:hint="Tên , mã , số điện thoại"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/firstRow">
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="106dp"
-            android:src="@drawable/ic_inbox" />
-
-        <TextView
-            android:id="@+id/textView123"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="Không có dữ liệu"
-            android:textSize="25sp" />
-    </LinearLayout>
-
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

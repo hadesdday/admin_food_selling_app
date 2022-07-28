@@ -7,7 +7,7 @@ import android.os.AsyncTask;
 import android.widget.Toast;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
-import com.nlu.admin_food_selling_app.MarshalDouble;
+import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Customer;
 import com.nlu.admin_food_selling_app.data.model.OrderDetails;

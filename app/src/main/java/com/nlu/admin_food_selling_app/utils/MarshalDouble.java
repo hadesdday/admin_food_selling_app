@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.utils;
 
 import org.ksoap2.serialization.Marshal;
 import org.ksoap2.serialization.PropertyInfo;

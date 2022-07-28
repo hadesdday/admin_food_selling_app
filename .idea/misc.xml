@@ -10,20 +10,25 @@
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1135" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/rounded_shape.xml" value="0.2085" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/shadow_drawable.xml" value="0.21" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/solid_circle.xml" value="0.1885" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/transparent_background.xml" value="0.21" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_customer.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_order.xml" value="0.264" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_confirm_modal.xml" value="0.13240740740740742" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_customer_information.xml" value="0.264" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_lost_password.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_main.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_order.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_order_details.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search.xml" value="0.264" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_customer.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_result.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_sent_recovery_code.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_test.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/back_button.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/bottom_nav_bar.xml" value="0.24094202898550723" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/customer_row.xml" value="0.264" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/dropdown.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_bottom_app_bar.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_customer.xml" value="0.24094202898550723" />
