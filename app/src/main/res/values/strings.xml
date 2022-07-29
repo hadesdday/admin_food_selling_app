@@ -24,4 +24,14 @@
         <item>2</item>
         <item>3</item>
     </string-array>
+    <string name="nav_home" translatable="false">Trang chủ</string>
+    <string name="nav_order" translatable="false">Hóa đơn</string>
+    <string name="nav_customer" translatable="false">Khách hàng</string>
+    <string name="nav_food" translatable="false">Đồ ăn</string>
+    <string name="nav_sale" translatable="false">Sale</string>
+    <string name="nav_voucher" translatable="false">Voucher</string>
+    <string name="nav_profile" translatable="false">Tài khoản của tôi</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 </resources>
