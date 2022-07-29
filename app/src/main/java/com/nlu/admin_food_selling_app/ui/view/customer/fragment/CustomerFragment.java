@@ -66,6 +66,8 @@ public class CustomerFragment extends Fragment {
 
         noDataView = v.findViewById(R.id.cNoDataView);
 
+        searchAction = v.findViewById(R.id.cSearchAct);
+
         customerList = new ArrayList<>();
         recyclerView = (RecyclerView) v.findViewById(R.id.customerRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
@@ -85,7 +87,6 @@ public class CustomerFragment extends Fragment {
             openAddCustomerView();
         });
 
-        searchAction = v.findViewById(R.id.searchAct);
         searchAction.setOnClickListener(view -> {
             openSearchCustomerView();
         });
@@ -173,11 +174,12 @@ public class CustomerFragment extends Fragment {
                     username = "";
                 }
 
-                Customer re = new Customer(id, name, address, phone, username);
+                Customer re = new Customer(name, address, phone, username);
+                re.setId(id);
                 customerList.add(re);
             }
         } catch (Exception e) {
-            System.out.println(e);
+            System.out.println("Get customer list error " + e);
         }
     }
 

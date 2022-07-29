@@ -70,7 +70,6 @@ public class OrderFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new OrderAdapter(orderList);
         recyclerView.setAdapter(adapter);
-        System.out.println("created order fragment view");
         getOrderList(0);
 
 //        SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshOrderView);

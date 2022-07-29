@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Customer;
-import com.nlu.admin_food_selling_app.ui.view.order_details.activity.OrderDetailsActivity;
+import com.nlu.admin_food_selling_app.ui.view.customer_information.activity.CustomerInformationActivity;
 
 import java.util.ArrayList;
 
@@ -34,9 +34,10 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
         public void onClick(View view) {
             int position = getLayoutPosition();
             Customer customer = customerList.get(position);
-            Intent intent = new Intent(view.getContext(), OrderDetailsActivity.class);
+            Intent intent = new Intent(view.getContext(), CustomerInformationActivity.class);
             Bundle bundle = new Bundle();
             bundle.putParcelable("customer", customer);
+            intent.putExtra("customerBundles", bundle);
             view.getContext().startActivity(intent);
         }
     }
@@ -53,7 +54,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.txtChar.setText(customerList.get(position).getName().toCharArray()[0]);
+        holder.txtChar.setText(String.valueOf(customerList.get(position).getName().toCharArray()[0]));
         holder.txtName.setText(customerList.get(position).getName());
         holder.txtPhone.setText(customerList.get(position).getPhoneNumber());
     }
