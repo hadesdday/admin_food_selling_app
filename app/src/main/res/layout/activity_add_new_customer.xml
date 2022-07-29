@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/linearLayout33"
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="60dp"
         android:background="@drawable/transparent_background"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,27 +21,28 @@
             android:id="@+id/cancelAddCustomer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="1"
+            android:layout_weight="0.1"
             android:backgroundTint="#FFFFFF"
             android:contentDescription="Hủy"
             app:srcCompat="@drawable/ic_baseline_cancel_24" />
 
         <TextView
+            android:id="@+id/customerActionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             android:layout_weight="1"
             android:text="Thêm khách hàng"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/submitNewOrder"
+            android:id="@+id/submitNewCustomer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="80dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="0.1"
             android:letterSpacing="0.1"
             android:text="Lưu"
             android:textSize="20dp" />
@@ -87,7 +88,7 @@
             android:layout_weight="0.1"
             android:ems="10"
             android:hint="Tên khách hàng"
-            android:inputType="number"
+            android:inputType="text"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -128,7 +129,7 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="Địa chỉ"
-            android:inputType="numberDecimal"
+            android:inputType="text"
             android:textSize="20sp" />
     </LinearLayout>
 
@@ -171,8 +172,65 @@
             android:ems="10"
             android:hint="Số điện thoại"
             android:inputType="phone"
+            android:maxLength="10"
             android:textSize="20sp" />
 
     </LinearLayout>
+
+    <View
+        android:id="@+id/divider8"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout10" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout18"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider8">
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="Username"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/acUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:contentDescription="phone"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="text"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/ecId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="177dp"
+        android:layout_weight="1"
+        android:text="TextView"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout18" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

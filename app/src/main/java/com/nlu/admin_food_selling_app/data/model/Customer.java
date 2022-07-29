@@ -13,8 +13,7 @@ public class Customer implements Parcelable {
     public Customer() {
     }
 
-    public Customer(int id, String name, String address, String phoneNumber, String username) {
-        this.id = id;
+    public Customer(String name, String address, String phoneNumber, String username) {
         this.name = name;
         this.address = address;
         this.phoneNumber = phoneNumber;

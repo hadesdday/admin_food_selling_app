@@ -22,6 +22,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import es.dmoral.toasty.Toasty;
+
 public class AddNewOrder extends AppCompatActivity {
     private static String URL = "";
     private static final String NAME_SPACE = "http://tempuri.org/";
@@ -107,10 +109,10 @@ public class AddNewOrder extends AppCompatActivity {
                 dialog.dismiss();
             }
             if (response) {
-                Toast.makeText(AddNewOrder.this, "Thêm hóa đơn mới thành công", Toast.LENGTH_SHORT).show();
+                Toasty.success(AddNewOrder.this, "Thêm hóa đơn mới thành công", Toast.LENGTH_SHORT).show();
                 finish();
             } else {
-                Toast.makeText(AddNewOrder.this, "Lỗi dữ liệu vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show();
+                Toasty.error(AddNewOrder.this, "Lỗi dữ liệu vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show();
             }
         }
     }
