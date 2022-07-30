@@ -15,6 +15,7 @@
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_customer.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_order.xml" value="0.264" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_sale.xml" value="0.23822463768115942" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_add_new_voucher.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_confirm_modal.xml" value="0.13240740740740742" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_customer_information.xml" value="0.264" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_home.xml" value="0.2" />
@@ -30,8 +31,11 @@
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_result.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_sale.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_sale_result.xml" value="0.23822463768115942" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_voucher.xml" value="0.23822463768115942" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_search_voucher_result.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_sent_recovery_code.xml" value="0.27447916666666666" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_test.xml" value="0.24094202898550723" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_voucher_information.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/back_button.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/bottom_nav_bar.xml" value="0.24094202898550723" />
@@ -47,13 +51,14 @@
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_order.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_sale.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_statistic.xml" value="0.2" />
-        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_voucher.xml" value="0.23822463768115942" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/fragment_voucher.xml" value="0.2" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/layout_header_nav.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/navigation_actions.xml" value="0.16458333333333333" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/order_details_rows.xml" value="0.176" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/order_fragment.xml" value="0.17864583333333334" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/order_row.xml" value="0.24094202898550723" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/sale_row.xml" value="0.23822463768115942" />
+        <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/voucher_row.xml" value="0.23822463768115942" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_article_24.xml" value="0.21" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layouts/mipmap-anydpi-v26/ic_launcher.xml" value="0.137" />
         <entry key="..\:/Android Dev/Android Dev/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layouts/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.137" />

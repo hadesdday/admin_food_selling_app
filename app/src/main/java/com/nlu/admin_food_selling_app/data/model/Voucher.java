@@ -70,4 +70,13 @@ public class Voucher implements Parcelable {
         parcel.writeDouble(rate);
         parcel.writeInt(active);
     }
+
+    @Override
+    public String toString() {
+        return "Voucher{" +
+                "id='" + id + '\'' +
+                ", rate=" + rate +
+                ", active=" + active +
+                '}';
+    }
 }

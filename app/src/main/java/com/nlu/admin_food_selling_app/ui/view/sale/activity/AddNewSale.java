@@ -1,5 +1,6 @@
 package com.nlu.admin_food_selling_app.ui.view.sale.activity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -8,6 +9,7 @@ import android.text.InputType;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
@@ -28,6 +30,7 @@ public class AddNewSale extends AppCompatActivity {
     SaleRepository repository;
     String titleName = "";
     Sale inSale;
+    ImageButton cancelAddSale;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class AddNewSale extends AppCompatActivity {
         submitNewSale = findViewById(R.id.submitNewSale);
         esId = findViewById(R.id.esId);
         saleActionTitle = findViewById(R.id.saleActionTitle);
+        cancelAddSale = findViewById(R.id.cancelAddSale);
 
         String[] foodTypes = getResources().getStringArray(R.array.food_type_entries);
         String[] status = getResources().getStringArray(R.array.sale_status_entries);
@@ -67,6 +71,16 @@ public class AddNewSale extends AppCompatActivity {
 
         asEndTime.setOnClickListener(view -> {
             showDateTimeDialog(asEndTime);
+        });
+
+        cancelAddSale.setOnClickListener(view->{
+            new AlertDialog.Builder(this)
+                    .setTitle("Thoát")
+                    .setMessage("Thay đổi trên sale sẽ không được lưu lại. Bạn có chắc chắn muốn thoát?")
+                    .setPositiveButton("ĐỒNG Ý", (dialogInterface, i) -> this.finish())
+                    .setNegativeButton("BỎ QUA", null)
+                    .setIcon(R.drawable.ic_danger)
+                    .show();
         });
 
         if (inSale != null && titleName.equals("Sửa thông tin đợt giảm giá")) {
