@@ -69,7 +69,7 @@ public class CustomerFragment extends Fragment {
         searchAction = v.findViewById(R.id.cSearchAct);
 
         customerList = new ArrayList<>();
-        recyclerView = (RecyclerView) v.findViewById(R.id.customerRecyclerView);
+        recyclerView = v.findViewById(R.id.customerRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new CustomerAdapter(customerList);
         recyclerView.setAdapter(adapter);

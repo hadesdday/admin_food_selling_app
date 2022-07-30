@@ -8,6 +8,7 @@ import android.widget.Toast;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
 import com.nlu.admin_food_selling_app.R;
+import com.nlu.admin_food_selling_app.data.model.Customer;
 import com.nlu.admin_food_selling_app.data.model.Voucher;
 import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 
@@ -20,7 +21,7 @@ import org.ksoap2.transport.HttpTransportSE;
 import es.dmoral.toasty.Toasty;
 
 public class VoucherRepository {
-    private Context context;
+    private final Context context;
     private static String URL = "";
     private static final String NAME_SPACE = "http://tempuri.org/";
     private static String METHOD_NAME = "";
@@ -47,7 +48,7 @@ public class VoucherRepository {
 
             @Override
             protected Boolean doInBackground(Voucher... vouchers) {
-                return addVoucher(voucher);
+                return insertVoucher(voucher);
             }
 
             @Override
@@ -104,16 +105,16 @@ public class VoucherRepository {
     }
 
 
-    public boolean addVoucher(Voucher voucher) {
+    public boolean insertVoucher(Voucher v) {
         try {
             METHOD_NAME = "AddVoucher";
             SOAP_ACTION = "http://tempuri.org/" + METHOD_NAME;
             SoapObject request = new SoapObject(NAME_SPACE, METHOD_NAME);
             SoapObject voucherObject = new SoapObject(NAME_SPACE, "voucher");
 
-            voucherObject.addProperty("Id", voucher.getId());
-            voucherObject.addProperty("Rate", voucher.getRate());
-            voucherObject.addProperty("Active", voucher.getActive());
+            voucherObject.addProperty("Id", v.getId());
+            voucherObject.addProperty("Rate", v.getRate());
+            voucherObject.addProperty("Active", v.getActive());
 
             request.addProperty("voucher", voucherObject);
 
@@ -138,7 +139,7 @@ public class VoucherRepository {
 
     public boolean deleteVoucher(String id) {
         try {
-            METHOD_NAME = "DeleteCustomer";
+            METHOD_NAME = "DeleteVoucher";
             SOAP_ACTION = "http://tempuri.org/" + METHOD_NAME;
             SoapObject request = new SoapObject(NAME_SPACE, METHOD_NAME);
             request.addProperty("id", id);

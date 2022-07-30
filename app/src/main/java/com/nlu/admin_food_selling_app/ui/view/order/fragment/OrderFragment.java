@@ -66,7 +66,7 @@ public class OrderFragment extends Fragment {
         noDataView = v.findViewById(R.id.noDataView);
 
         orderList = new ArrayList<>();
-        recyclerView = (RecyclerView) v.findViewById(R.id.orderRecyclerView);
+        recyclerView = v.findViewById(R.id.orderRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new OrderAdapter(orderList);
         recyclerView.setAdapter(adapter);

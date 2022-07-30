@@ -52,7 +52,7 @@ public class SaleAdapter extends RecyclerView.Adapter<SaleAdapter.MyViewHolder> 
     }
 
     public SaleAdapter(ArrayList<Sale> saleList) {
-        this.saleList = saleList;
+        SaleAdapter.saleList = saleList;
     }
 
     @NonNull

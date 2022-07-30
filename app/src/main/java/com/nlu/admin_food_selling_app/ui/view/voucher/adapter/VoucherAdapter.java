@@ -46,7 +46,7 @@ public class VoucherAdapter extends RecyclerView.Adapter<VoucherAdapter.MyViewHo
     }
 
     public VoucherAdapter(ArrayList<Voucher> voucherList) {
-        this.voucherList = voucherList;
+        VoucherAdapter.voucherList = voucherList;
     }
 
     @NonNull

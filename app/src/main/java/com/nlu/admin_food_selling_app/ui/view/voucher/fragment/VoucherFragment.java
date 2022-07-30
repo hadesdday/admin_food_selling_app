@@ -69,7 +69,7 @@ public class VoucherFragment extends Fragment {
         searchAction = v.findViewById(R.id.sSearchAct);
 
         voucherList = new ArrayList<>();
-        recyclerView = (RecyclerView) v.findViewById(R.id.voucherRecyclerView);
+        recyclerView = v.findViewById(R.id.voucherRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new VoucherAdapter(voucherList);
         recyclerView.setAdapter(adapter);

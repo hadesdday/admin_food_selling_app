@@ -25,7 +25,7 @@
             app:srcCompat="@drawable/ic_baseline_cancel_24" />
 
         <TextView
-            android:id="@+id/customerActionTitle"
+            android:id="@+id/voucherActionTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
