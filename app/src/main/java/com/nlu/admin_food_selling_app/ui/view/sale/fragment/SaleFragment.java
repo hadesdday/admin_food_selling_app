@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.ui.view.sale.fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
+import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Sale;
 import com.nlu.admin_food_selling_app.helper.GetVariable;
 import com.nlu.admin_food_selling_app.ui.view.sale.activity.AddNewSale;

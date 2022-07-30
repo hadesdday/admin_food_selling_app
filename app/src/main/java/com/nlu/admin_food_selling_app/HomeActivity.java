@@ -17,6 +17,7 @@ import com.nlu.admin_food_selling_app.ui.view.account.fragment.MyAccountFragment
 import com.nlu.admin_food_selling_app.ui.view.customer.fragment.CustomerFragment;
 import com.nlu.admin_food_selling_app.ui.view.food.fragment.FoodFragment;
 import com.nlu.admin_food_selling_app.ui.view.order.fragment.OrderFragment;
+import com.nlu.admin_food_selling_app.ui.view.sale.fragment.SaleFragment;
 
 public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
