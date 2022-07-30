@@ -27,7 +27,7 @@ public class OrderDetailsAdapter extends RecyclerView.Adapter<OrderDetailsAdapte
     }
 
     public OrderDetailsAdapter(ArrayList<OrderDetails> orderDetailsList) {
-        this.orderDetailsList = orderDetailsList;
+        OrderDetailsAdapter.orderDetailsList = orderDetailsList;
     }
 
     @NonNull

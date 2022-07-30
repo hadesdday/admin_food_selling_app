@@ -48,7 +48,7 @@ public class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.MyViewHolder
     }
 
     public OrderAdapter(ArrayList<Order> orderList) {
-        this.orderList = orderList;
+        OrderAdapter.orderList = orderList;
     }
 
     @NonNull

@@ -43,7 +43,7 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.MyView
     }
 
     public CustomerAdapter(ArrayList<Customer> customerList) {
-        this.customerList = customerList;
+        CustomerAdapter.customerList = customerList;
     }
 
     @NonNull

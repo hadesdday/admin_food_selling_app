@@ -52,7 +52,7 @@ public class SearchResultActivity extends AppCompatActivity {
         int keyword = searchBundles.getInt("keyword");
 
         keywordTitle = findViewById(R.id.searchKeywordTitle);
-        keywordTitle.setText("Mã khách hàng : " + String.valueOf(keyword));
+        keywordTitle.setText("Mã khách hàng : " + keyword);
 
         orderList = new ArrayList<>();
 

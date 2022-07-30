@@ -68,7 +68,7 @@ public class SaleFragment extends Fragment {
         searchAction = v.findViewById(R.id.sSearchAct);
 
         saleList = new ArrayList<>();
-        recyclerView = (RecyclerView) v.findViewById(R.id.saleRecyclerView);
+        recyclerView = v.findViewById(R.id.saleRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));
         adapter = new SaleAdapter(saleList);
         recyclerView.setAdapter(adapter);

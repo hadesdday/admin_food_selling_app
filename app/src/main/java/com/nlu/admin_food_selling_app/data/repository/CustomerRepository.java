@@ -20,7 +20,7 @@ import org.ksoap2.transport.HttpTransportSE;
 import es.dmoral.toasty.Toasty;
 
 public class CustomerRepository {
-    private Context context;
+    private final Context context;
     private static String URL = "";
     private static final String NAME_SPACE = "http://tempuri.org/";
     private static String METHOD_NAME = "";
