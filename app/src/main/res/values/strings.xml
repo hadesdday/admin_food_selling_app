@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Food Admin</string>
-    <string name="API_URL" translatable="false">http://192.168.1.7/AdminService.asmx</string>
+    <string name="API_URL" translatable="false">http://192.168.1.5/AdminService.asmx</string>
     <string name="title_home">Trang chủ</string>
     <string name="title_order">Hóa đơn</string>
     <string name="title_voucher">Voucher</string>
@@ -34,4 +34,21 @@
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <string-array name="food_type_entries">
+        <item>Cơm</item>
+        <item>Cháo</item>
+        <item>Lẩu</item>
+        <item>Đồ nướng</item>
+        <item>Đồ ăn nhanh</item>
+        <item>Đồ ăn vặt</item>
+    </string-array>
+    <string-array name="sale_status_entries">
+        <item>Không hoạt động</item>
+        <item>Đang hoạt động</item>
+    </string-array>
+    <string-array name="voucher_status_entries">
+        <item>Chưa sử dụng</item>
+        <item>Đã sử dụng</item>
+    </string-array>
 </resources>

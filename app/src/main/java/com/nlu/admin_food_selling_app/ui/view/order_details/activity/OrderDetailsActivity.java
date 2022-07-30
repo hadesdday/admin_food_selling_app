@@ -42,7 +42,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
 
         orderDetailsId = findViewById(R.id.orderDetailsId);
         odCustomerName = findViewById(R.id.odCustomerName);
-        odDate = findViewById(R.id.odDate);
+        odDate = findViewById(R.id.sdType);
         odTotalPrice = findViewById(R.id.odTotalPrice);
         odStatus = findViewById(R.id.odStatus);
         odCancelOrder = findViewById(R.id.odCancelOrder);

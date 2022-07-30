@@ -13,6 +13,18 @@
         android:theme="@style/Theme.Admin_food_selling_app"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.view.sale.activity.SaleInformation"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.sale.activity.SearchSaleResult"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.sale.activity.SearchSale"
+            android:exported="false" />
+        <activity
+            android:name=".ui.view.sale.activity.AddNewSale"
+            android:exported="false" />
+        <activity
             android:name=".ui.view.customer_information.activity.SearchCustomerResult"
             android:exported="false" />
         <activity
