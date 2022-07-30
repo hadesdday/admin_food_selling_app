@@ -27,7 +27,6 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.util.ArrayList;
 
 public class SearchSaleResult extends AppCompatActivity {
-
     ImageButton finishSearchSaleResult;
     RecyclerView recyclerView;
     SaleAdapter adapter;

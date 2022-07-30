@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -12,9 +13,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
-import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Order;
+import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -32,7 +33,8 @@ public class AddNewOrder extends AppCompatActivity {
 
     Spinner aoPaymentMethod, aoOrderStatus;
     ImageView cancelAction;
-    TextView submitNewOrder, aoCustomerId, aoTotalPrice, aoVoucher;
+    TextView submitNewOrder;
+    EditText aoCustomerId, aoTotalPrice, aoVoucher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,16 +71,26 @@ public class AddNewOrder extends AppCompatActivity {
         });
 
         submitNewOrder.setOnClickListener(view -> {
-            int customerId = Integer.parseInt(String.valueOf(aoCustomerId.getText()));
-            double totalPrice = Double.parseDouble(String.valueOf(aoTotalPrice.getText()));
-            String paymentMethod = (String) aoPaymentMethod.getSelectedItem();
-            int status = aoOrderStatus.getSelectedItemPosition() + 1;
-            String voucher = aoVoucher.getText().toString();
-            String voucherId = voucher.isEmpty() ? "" : voucher;
 
-            Order order = new Order(customerId, totalPrice, paymentMethod, status, voucherId);
+            EditText[] inp = new EditText[]{aoCustomerId, aoTotalPrice, aoVoucher};
 
-            new AddNewOrderService().execute(order);
+            boolean valid = true;
+            for (EditText e : inp) {
+                if (e.getText().toString().isEmpty()) {
+                    e.setError("Vui lòng nhập dữ liệu đúng định dạng");
+                    valid = false;
+                }
+            }
+            if (valid) {
+                int customerId = Integer.parseInt(String.valueOf(aoCustomerId.getText()));
+                double totalPrice = Double.parseDouble(String.valueOf(aoTotalPrice.getText()));
+                String paymentMethod = (String) aoPaymentMethod.getSelectedItem();
+                int status = aoOrderStatus.getSelectedItemPosition() + 1;
+                String voucher = aoVoucher.getText().toString();
+                String voucherId = voucher.isEmpty() ? "" : voucher;
+                Order order = new Order(customerId, totalPrice, paymentMethod, status, voucherId);
+                new AddNewOrderService().execute(order);
+            }
         });
     }
 
