@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Food Admin</string>
-    <string name="API_URL" translatable="false">http://192.168.1.7/AdminService.asmx</string>
+    <string name="API_URL" translatable="false">http://192.168.1.5/AdminService.asmx</string>
     <string name="title_home">Trang chủ</string>
     <string name="title_order">Hóa đơn</string>
     <string name="title_voucher">Voucher</string>
@@ -23,5 +23,32 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+    </string-array>
+    <string name="nav_home" translatable="false">Trang chủ</string>
+    <string name="nav_order" translatable="false">Hóa đơn</string>
+    <string name="nav_customer" translatable="false">Khách hàng</string>
+    <string name="nav_food" translatable="false">Đồ ăn</string>
+    <string name="nav_sale" translatable="false">Sale</string>
+    <string name="nav_voucher" translatable="false">Voucher</string>
+    <string name="nav_profile" translatable="false">Tài khoản của tôi</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+
+    <string-array name="food_type_entries">
+        <item>Cơm</item>
+        <item>Cháo</item>
+        <item>Lẩu</item>
+        <item>Đồ nướng</item>
+        <item>Đồ ăn nhanh</item>
+        <item>Đồ ăn vặt</item>
+    </string-array>
+    <string-array name="sale_status_entries">
+        <item>Không hoạt động</item>
+        <item>Đang hoạt động</item>
+    </string-array>
+    <string-array name="voucher_status_entries">
+        <item>Chưa sử dụng</item>
+        <item>Đã sử dụng</item>
     </string-array>
 </resources>
