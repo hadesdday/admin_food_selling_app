@@ -55,6 +55,10 @@ public class SearchVoucherResult extends AppCompatActivity {
         adapter = new VoucherAdapter(voucherList);
         searchVoucherResultList.setAdapter(adapter);
         searchVoucherTask(id);
+
+        finishSearchVoucherResult.setOnClickListener(view->{
+            this.finish();
+        });
     }
 
     @SuppressLint("StaticFieldLeak")

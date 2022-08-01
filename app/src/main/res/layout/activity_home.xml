@@ -23,7 +23,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:background="@color/purple_700"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:subtitleTextColor="#FFFFFF"
+                app:titleTextColor="#FFFFFF" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
