@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nlu.admin_food_selling_app.adapters.OrderDetailsAdapter;
 import com.nlu.admin_food_selling_app.data.model.Customer;
 import com.nlu.admin_food_selling_app.data.model.Order;
 import com.nlu.admin_food_selling_app.data.model.OrderDetails;

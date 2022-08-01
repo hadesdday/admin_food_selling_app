@@ -1,4 +1,4 @@
-package com.nlu.admin_food_selling_app;
+package com.nlu.admin_food_selling_app.adapters;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.nlu.admin_food_selling_app.OrderDetailsActivity;
+import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Order;
 
 import java.util.ArrayList;

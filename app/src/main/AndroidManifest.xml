@@ -3,6 +3,7 @@
     package="com.nlu.admin_food_selling_app">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,6 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Admin_food_selling_app"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".FoodRateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FoodTypeAdd"
+            android:exported="false" />
+        <activity
+            android:name=".FoodSearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FoodAddActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateFoodActivity"
+            android:exported="false" />
         <activity
             android:name=".OrderDetailsActivity"
             android:exported="false" />
@@ -25,6 +41,12 @@
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FoodByFoodIdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FilteredFood"
             android:exported="false" />
         <activity
             android:name=".LostPasswordActivity"
@@ -44,4 +66,5 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

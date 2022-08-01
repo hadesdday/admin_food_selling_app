@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/addFoodType"
+        android:title="Thêm loại món ăn"    />
+    <item android:id="@+id/addFood"
+        android:title="Thêm món ăn" />
+</menu>
