@@ -42,6 +42,7 @@ dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation files('libs/ksoap2-android-assembly-3.4.0-jar-with-dependencies.jar')
     implementation 'com.github.GrenderG:Toasty:1.5.2'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
     def lottieVersion = "5.2.0"
     implementation "com.airbnb.android:lottie:$lottieVersion"
     implementation 'io.github.amrdeveloper:lottiedialog:1.0.0'

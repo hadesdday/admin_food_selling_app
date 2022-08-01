@@ -73,6 +73,37 @@
         <entry key="..\:/Android Studio Workspace/admin_food_selling_app/app/src/main/res/drawable/layout_btn.xml" value="0.2205" />
         <entry key="..\:/Android Studio Workspace/admin_food_selling_app/app/src/main/res/font/fonts.xml" value="0.3046875" />
         <entry key="..\:/Android Studio Workspace/admin_food_selling_app/app/src/main/res/layout/activity_main.xml" value="0.2535211267605634" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/drawable/btn_ripple.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/drawable/layout_btn.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/drawable/rounded_shape.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/drawable/shadow_drawable.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/drawable/solid_circle.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/drawable/transparent_background.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_filtered_food.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_food_add.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_food_food_id.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_food_rate.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_food_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_food_type_add.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/activity_update_food.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/fragment_food.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layout/fragment_my_account.xml" value="0.25416666666666665" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_add_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_article_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_cancel_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_fastfood_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_home_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_search_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_sort_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_star_rate_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_sticky_note_2_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_baseline_supervised_user_circle_24.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_danger.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_edit.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_inbox.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/layouts/drawable/ic_white_arrow.xml" value="0.2035" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/menu/add_popup_menu.xml" value="0.18802083333333333" />
+        <entry key="..\:/Lap_Trinh/admin_food_selling_app/app/src/main/res/menu/menu_nav.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/PC/AppData/Local/Temp/drawable-temp/fake_of_awd.xml" value="0.2085" />
       </map>
     </option>
