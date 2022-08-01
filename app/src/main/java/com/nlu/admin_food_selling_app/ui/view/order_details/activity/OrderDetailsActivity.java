@@ -35,7 +35,7 @@ public class OrderDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_details);
 
-        repository = new OrderDetailsRepository(getResources().getString(R.string.API_URL), OrderDetailsActivity.this);
+        repository = new OrderDetailsRepository( OrderDetailsActivity.this);
 
         orderDetailsList = new ArrayList<>();
         orderCustomer = new Customer();

@@ -30,9 +30,9 @@ public class OrderDetailsRepository {
     private static String METHOD_NAME = "";
     private static String SOAP_ACTION = "http://tempuri.org/" + METHOD_NAME;
 
-    public OrderDetailsRepository(String url, Context ctx) {
-        URL = url;
+    public OrderDetailsRepository(Context ctx) {
         context = ctx;
+        URL = ctx.getResources().getString(R.string.API_URL);
     }
 
     @SuppressLint("StaticFieldLeak")

@@ -91,6 +91,7 @@ public class AddNewSale extends AppCompatActivity {
             asRate.setText(String.valueOf(inSale.getRate()));
             asDescription.setText(inSale.getDescription());
             asEndTime.setText(inSale.getEndTime());
+            asFoodType.setEnabled(false);
         }
 
         submitNewSale.setOnClickListener(view -> {

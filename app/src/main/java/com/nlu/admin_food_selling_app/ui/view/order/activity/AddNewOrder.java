@@ -1,47 +1,32 @@
 package com.nlu.admin_food_selling_app.ui.view.order.activity;
 
 import android.app.AlertDialog;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.amrdeveloper.lottiedialog.LottieDialog;
 import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Order;
-import com.nlu.admin_food_selling_app.utils.MarshalDouble;
-
-import org.ksoap2.SoapEnvelope;
-import org.ksoap2.serialization.SoapObject;
-import org.ksoap2.serialization.SoapPrimitive;
-import org.ksoap2.serialization.SoapSerializationEnvelope;
-import org.ksoap2.transport.HttpTransportSE;
-
-import es.dmoral.toasty.Toasty;
+import com.nlu.admin_food_selling_app.data.repository.OrderRepository;
 
 public class AddNewOrder extends AppCompatActivity {
-    private static String URL = "";
-    private static final String NAME_SPACE = "http://tempuri.org/";
-    private static final String METHOD_NAME = "InsertBill";
-    private static final String SOAP_ACTION = "http://tempuri.org/InsertBill";
-
     Spinner aoPaymentMethod, aoOrderStatus;
     ImageView cancelAction;
     TextView submitNewOrder;
     EditText aoCustomerId, aoTotalPrice, aoVoucher;
+    OrderRepository repository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_new_order);
 
-        URL = getResources().getString(R.string.API_URL);
+        repository = new OrderRepository(this);
 
         aoPaymentMethod = findViewById(R.id.aoPaymentMethod);
         aoOrderStatus = findViewById(R.id.aoOrderStatus);
@@ -72,7 +57,7 @@ public class AddNewOrder extends AppCompatActivity {
 
         submitNewOrder.setOnClickListener(view -> {
 
-            EditText[] inp = new EditText[]{aoCustomerId, aoTotalPrice, aoVoucher};
+            EditText[] inp = new EditText[]{aoCustomerId, aoTotalPrice};
 
             boolean valid = true;
             for (EditText e : inp) {
@@ -89,76 +74,8 @@ public class AddNewOrder extends AppCompatActivity {
                 String voucher = aoVoucher.getText().toString();
                 String voucherId = voucher.isEmpty() ? "" : voucher;
                 Order order = new Order(customerId, totalPrice, paymentMethod, status, voucherId);
-                new AddNewOrderService().execute(order);
+               repository.insertBillTask(order);
             }
         });
     }
-
-    private class AddNewOrderService extends AsyncTask<Order, Boolean, Boolean> {
-        private final LottieDialog dialog = new LottieDialog(AddNewOrder.this);
-
-        @Override
-        protected void onPreExecute() {
-            dialog.setAnimation(R.raw.loading);
-            dialog.setAnimationRepeatCount(LottieDialog.INFINITE);
-            dialog.setMessage("Vui lòng chờ");
-            dialog.setAutoPlayAnimation(true);
-            dialog.show();
-        }
-
-        @Override
-        protected Boolean doInBackground(Order... orders) {
-            try {
-                return insertBill(orders[0]);
-            } catch (Exception e) {
-                return false;
-            }
-        }
-
-        @Override
-        protected void onPostExecute(Boolean response) {
-            if (dialog.isShowing()) {
-                dialog.dismiss();
-            }
-            if (response) {
-                Toasty.success(AddNewOrder.this, "Thêm hóa đơn mới thành công", Toast.LENGTH_SHORT).show();
-                finish();
-            } else {
-                Toasty.error(AddNewOrder.this, "Lỗi dữ liệu vui lòng kiểm tra lại", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
-
-    public boolean insertBill(Order order) {
-        try {
-            SoapObject request = new SoapObject(NAME_SPACE, METHOD_NAME);
-            SoapObject orderObject = new SoapObject(NAME_SPACE, "bill");
-
-            orderObject.addProperty("Voucher", order.getVoucher());
-            orderObject.addProperty("CustomerId", order.getCustomerId());
-            orderObject.addProperty("Price", order.getTotalPrice());
-            orderObject.addProperty("PaymentMethod", order.getPaymentMethod());
-            orderObject.addProperty("Status", order.getStatus());
-
-            request.addProperty("bill", orderObject);
-
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-            envelope.dotNet = true;
-            envelope.implicitTypes = true;
-            envelope.encodingStyle = SoapSerializationEnvelope.XSD;
-            envelope.setOutputSoapObject(request);
-            MarshalDouble marshal = new MarshalDouble();
-            marshal.register(envelope);
-            HttpTransportSE androidHttpTransport = new HttpTransportSE(URL);
-            androidHttpTransport.call(SOAP_ACTION, envelope);
-
-            SoapPrimitive soapPrimitive = (SoapPrimitive) envelope.getResponse();
-
-            boolean responseStatus = Boolean.parseBoolean(soapPrimitive.toString());
-            return responseStatus;
-        } catch (Exception e) {
-            return false;
-        }
-    }
-
 }

@@ -33,11 +33,16 @@ public class SearchVoucher extends AppCompatActivity {
             Intent intent = new Intent(SearchVoucher.this, SearchVoucherResult.class);
 
             String id = String.valueOf(vSearchKey.getText());
-            Bundle bundle = new Bundle();
-            bundle.putString("id", id);
-            intent.putExtra("searchBundles", bundle);
-            startActivity(intent);
-            SearchVoucher.this.finish();
+            if (id.isEmpty()) {
+                vSearchKey.setError("Vui lòng nhập mã voucher");
+                vSearchKey.requestFocus();
+            } else {
+                Bundle bundle = new Bundle();
+                bundle.putString("id", id);
+                intent.putExtra("searchBundles", bundle);
+                startActivity(intent);
+                SearchVoucher.this.finish();
+            }
         });
     }
 }
