@@ -13,23 +13,29 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.FoodRating;
+import com.nlu.admin_food_selling_app.ui.view.food.activity.FoodRateActivity;
 
 import java.util.ArrayList;
 
 public class FoodRateAdapter extends RecyclerView.Adapter<FoodRateAdapter.FoodRateHolder> {
     Context context;
     ArrayList<FoodRating> foodRatingArrayList;
+    OnClickListener listener;
 
     public FoodRateAdapter(Context context, ArrayList<FoodRating> foodRatingArrayList) {
         this.context = context;
         this.foodRatingArrayList = foodRatingArrayList;
     }
 
+    public void setOnClickListener(OnClickListener listener) {
+        this.listener = listener;
+    }
+
     @NonNull
     @Override
     public FoodRateHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_foodrate, parent, false);
-        return new FoodRateHolder(v);
+        return new FoodRateHolder(v, listener);
     }
 
     @Override
@@ -48,27 +54,23 @@ public class FoodRateAdapter extends RecyclerView.Adapter<FoodRateAdapter.FoodRa
         TextView foodRate, foodComment;
         ImageButton delete;
 
-        public FoodRateHolder(@NonNull View itemView) {
+        public FoodRateHolder(@NonNull View itemView, OnClickListener listener) {
             super(itemView);
             foodRate = itemView.findViewById(R.id.rate);
             foodComment = itemView.findViewById(R.id.comment);
             delete = itemView.findViewById(R.id.delete);
 
             delete.setOnClickListener(view -> {
-                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-
-                builder.setTitle("Xóa bình luận");
-                builder.setMessage("Bạn có muốn xóa bình luận đó không");
-                builder.setCancelable(true);
-                builder.setPositiveButton("Có", (dialogInterface, i) -> {
-
-                });
-                builder.setNegativeButton("Không", (dialogInterface, i) -> {
-                    dialogInterface.cancel();
-                });
-
-                builder.show().create();
+                if (listener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION)
+                        listener.onDelete(position);
+                }
             });
         }
+    }
+
+    public interface OnClickListener {
+        void onDelete(int position);
     }
 }
