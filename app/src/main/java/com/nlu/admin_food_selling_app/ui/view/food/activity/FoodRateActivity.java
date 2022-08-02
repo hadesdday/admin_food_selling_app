@@ -58,6 +58,8 @@ public class FoodRateActivity extends AppCompatActivity {
             else {
                 new doRate().execute();
             }
+            rate.setRating(0);
+            comment.setText("");
             new doFoodRate().execute();
         });
     }
@@ -183,28 +185,21 @@ public class FoodRateActivity extends AppCompatActivity {
         rateList.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         rateList.setAdapter(adapter);
 
-        rateList.addOnItemTouchListener
-                (new RecyclerTouchListener(FoodRateActivity.this, rateList, new RecyclerTouchListener.ClickListener() {
-                    @Override
-                    public void onTouch(View view, int position) {}
+        adapter.setOnClickListener(position -> {
+            rateId = foodRatingArrayList.get(position).getRateId();
+            AlertDialog.Builder builder = new AlertDialog.Builder(FoodRateActivity.this);
 
-                    @Override
-                    public void onHold(View view, int position) {
-                        rateId = foodRatingArrayList.get(position).getRateId();
-                        AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
-
-                        builder.setTitle("Xóa bình luận?");
-                        builder.setMessage("Bạn có muốn xóa bình luận đó không?");
-                        builder.setCancelable(true);
-                        builder.setPositiveButton("Có", (dialogInterface, i) -> {
-                            new doDeleteRate().execute();
-                        });
-                        builder.setNegativeButton("Không", (dialogInterface, i) -> {
-                            dialogInterface.cancel();
-                        });
-                        builder.show().create();
-                    }
-                }));
+            builder.setTitle("Xóa bình luận?");
+            builder.setMessage("Bạn có muốn xóa bình luận đó không?");
+            builder.setCancelable(true);
+            builder.setPositiveButton("Có", (dialogInterface, i) -> {
+                new doDeleteRate().execute();
+            });
+            builder.setNegativeButton("Không", (dialogInterface, i) -> {
+                dialogInterface.cancel();
+            });
+            builder.show().create();
+        });
     }
 
     class doDeleteRate extends AsyncTask<Void, Void, String> {
@@ -251,6 +246,8 @@ public class FoodRateActivity extends AppCompatActivity {
                         "Xóa dữ liệu thành công. :)", Toast.LENGTH_LONG).show();
                 exc = false;
             }
+
+            new doFoodRate().execute();
         }
     }
 }
