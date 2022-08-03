@@ -55,8 +55,8 @@ public class FoodAddActivity extends AppCompatActivity {
     class doFoodTypeList extends AsyncTask<Void, Void, Void> {
         boolean exc = false;
         private final ProgressDialog dialog = new ProgressDialog(FoodAddActivity.this);
-        private final String NAMESPACE = getResources().getString(R.string.NAMESPACE);
-        private final String URL = getResources().getString(R.string.URL);
+        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
+        private final String URL = getResources().getString(R.string.API_URL);
         private final String METHOD = "getFoodType";
         private final String SOAP_ACTION = NAMESPACE + METHOD;
 
@@ -79,8 +79,8 @@ public class FoodAddActivity extends AppCompatActivity {
 
                 for (int i = 0; i < foodTypeSize; i++) {
                     SoapObject item = (SoapObject) soapObjectResponse.getProperty(i);
-                    int foodTypeId = Integer.parseInt(item.getProperty("FoodTypeId").toString());
-                    String foodTypeName = item.getProperty("FoodTypeName").toString();
+                    int foodTypeId = Integer.parseInt(item.getProperty("id").toString());
+                    String foodTypeName = item.getProperty("name").toString();
                     foodTypeArrayList.add(new FoodType(foodTypeId, foodTypeName));
                 }
             } catch (Exception e) {

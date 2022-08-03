@@ -95,8 +95,8 @@ public class FoodByFoodIdActivity extends AppCompatActivity {
     class doDeleteFood extends AsyncTask<Void, Void, String> {
         boolean exc = false;
         private final ProgressDialog dialog = new ProgressDialog(FoodByFoodIdActivity.this);
-        private final String NAMESPACE = getResources().getString(R.string.NAMESPACE);
-        private final String URL = getResources().getString(R.string.URL);
+        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
+        private final String URL = getResources().getString(R.string.API_URL);
         private final String METHOD = "delFood";
         private final String SOAP_ACTION = NAMESPACE + METHOD;
 

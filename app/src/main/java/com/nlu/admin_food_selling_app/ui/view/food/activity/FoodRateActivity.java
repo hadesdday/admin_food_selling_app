@@ -66,8 +66,8 @@ public class FoodRateActivity extends AppCompatActivity {
 
     class doRate extends AsyncTask<Void, Void, String> {
         boolean exc = false;
-        private final String NAMESPACE = getResources().getString(R.string.NAMESPACE);
-        private final String URL = getResources().getString(R.string.URL);
+        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
+        private final String URL = getResources().getString(R.string.API_URL);
         private final ProgressDialog dialog = new ProgressDialog(FoodRateActivity.this);
         private final String METHOD = "addFoodRating";
         private final String SOAP_ACTION = NAMESPACE + METHOD;
@@ -119,8 +119,8 @@ public class FoodRateActivity extends AppCompatActivity {
 
     class doFoodRate extends AsyncTask<Void, Void, Void> {
         boolean exc = false;
-        private final String NAMESPACE = getResources().getString(R.string.NAMESPACE);
-        private final String URL = getResources().getString(R.string.URL);
+        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
+        private final String URL = getResources().getString(R.string.API_URL);
         private final ProgressDialog dialog = new ProgressDialog(FoodRateActivity.this);
         private final String METHOD = "getFoodRateByFoodId";
         private final String SOAP_ACTION = NAMESPACE + METHOD;
@@ -144,10 +144,10 @@ public class FoodRateActivity extends AppCompatActivity {
 
                 for (int i = 0; i < foodRateSize; i++) {
                     SoapObject item = (SoapObject) soapObjectResponse.getProperty(i);
-                    int rateId = Integer.parseInt(item.getProperty("RateId").toString());
-                    int foodId = Integer.parseInt(item.getProperty("FoodId").toString());
-                    float foodRate = Float.parseFloat(item.getProperty("FoodRate").toString());
-                    String foodComment = item.getProperty("FoodComment").toString();
+                    int rateId = Integer.parseInt(item.getProperty("id").toString());
+                    int foodId = Integer.parseInt(item.getProperty("food_id").toString());
+                    float foodRate = Float.parseFloat(item.getProperty("rate").toString());
+                    String foodComment = item.getProperty("comment").toString();
                     foodRatingArrayList.add(new FoodRating(rateId, foodId, foodRate, foodComment));
                 }
             } catch (Exception e) {
@@ -205,8 +205,8 @@ public class FoodRateActivity extends AppCompatActivity {
     class doDeleteRate extends AsyncTask<Void, Void, String> {
         boolean exc = false;
         private final ProgressDialog dialog = new ProgressDialog(FoodRateActivity.this);
-        private final String NAMESPACE = getResources().getString(R.string.NAMESPACE);
-        private final String URL = getResources().getString(R.string.URL);
+        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
+        private final String URL = getResources().getString(R.string.API_URL);
         private final String METHOD = "delFoodRating";
         private final String SOAP_ACTION = NAMESPACE + METHOD;
 
