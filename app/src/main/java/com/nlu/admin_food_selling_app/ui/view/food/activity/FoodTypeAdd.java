@@ -43,8 +43,8 @@ public class FoodTypeAdd extends AppCompatActivity {
     class add extends AsyncTask<Void, Void, String> {
         boolean exc = false;
         private final ProgressDialog dialog = new ProgressDialog(FoodTypeAdd.this);
-        private final String NAMESPACE = getResources().getString(R.string.NAMESPACE);
-        private final String URL = getResources().getString(R.string.URL);
+        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
+        private final String URL = getResources().getString(R.string.API_URL);
         private final String METHOD = "addFoodType";
         private final String SOAP_ACTION = NAMESPACE + METHOD;
 
