@@ -13,19 +13,22 @@
         android:src="@drawable/logo_hcmuaf" />
 
     <TextView
+        android:id="@+id/sessionUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:text="Admin"
+        android:inputType="textPersonName"
+        android:text="admin"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
     <TextView
+        android:id="@+id/sessionEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Admin@adw.com"
+        android:text="nhocproaoe@gmail.com"
         android:textColor="#FFFFFF"
         android:textSize="16sp" />
 </LinearLayout>
