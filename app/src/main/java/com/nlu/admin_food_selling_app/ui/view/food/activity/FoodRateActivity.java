@@ -32,9 +32,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class FoodRateActivity extends AppCompatActivity {
-    RatingBar rate;
-    EditText comment;
-    Button send;
     ArrayList<FoodRating> foodRatingArrayList;
     RecyclerView rateList;
     FoodRateAdapter adapter;
@@ -44,77 +41,8 @@ public class FoodRateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_rate);
-        rate = findViewById(R.id.foodrate);
-        comment = findViewById(R.id.foodcomment);
-        send = findViewById(R.id.send);
-
         foodId = getIntent().getIntExtra("foodid", 0);
-
         new doFoodRate().execute();
-
-        send.setOnClickListener(view -> {
-            if (rate.getRating() == 0 || comment.getText().length() == 0)
-                Toast.makeText(this, "Oops!", Toast.LENGTH_SHORT).show();
-            else {
-                new doRate().execute();
-            }
-            rate.setRating(0);
-            comment.setText("");
-            new doFoodRate().execute();
-        });
-    }
-
-    class doRate extends AsyncTask<Void, Void, String> {
-        boolean exc = false;
-        private final String NAMESPACE = getResources().getString(R.string.API_NAMESPACE);
-        private final String URL = getResources().getString(R.string.API_URL);
-        private final ProgressDialog dialog = new ProgressDialog(FoodRateActivity.this);
-        private final String METHOD = "addFoodRating";
-        private final String SOAP_ACTION = NAMESPACE + METHOD;
-
-        @Override
-        protected String doInBackground(Void... voids) {
-            SoapObject soapObjectRequest = new SoapObject(NAMESPACE, METHOD);
-            soapObjectRequest.addProperty("foodId", foodId);
-            soapObjectRequest.addProperty("foodRate", rate.getRating());
-            soapObjectRequest.addProperty("foodComment", comment.getText().toString());
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
-            envelope.dotNet = true;
-            envelope.setOutputSoapObject(soapObjectRequest);
-            MarshalFloat marshalFloat = new MarshalFloat();
-            marshalFloat.register(envelope);
-
-            HttpTransportSE transportSE = new HttpTransportSE(URL);
-            try {
-                transportSE.call(SOAP_ACTION, envelope);
-            } catch (Exception e) {
-                exc = true;
-                e.printStackTrace();
-            }
-
-            SoapObject soapObjectResponse = (SoapObject) envelope.bodyIn;
-            SoapPrimitive primitive = (SoapPrimitive) soapObjectResponse.getProperty("addFoodRatingResult");
-            return primitive.toString();
-        }
-
-        @Override
-        protected void onPreExecute() {
-            this.dialog.setMessage("Đang tải dữ liệu...");
-            this.dialog.show();
-        }
-
-        @Override
-        protected void onPostExecute(String unused) {
-            if (this.dialog.isShowing())
-                this.dialog.dismiss();
-
-            if (exc)
-                Toast.makeText(FoodRateActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
-            else {
-                Toast.makeText(FoodRateActivity.this, "Tải dữ liệu thành công. :)", Toast.LENGTH_SHORT).show();
-                exc = false;
-            }
-        }
     }
 
     class doFoodRate extends AsyncTask<Void, Void, Void> {
