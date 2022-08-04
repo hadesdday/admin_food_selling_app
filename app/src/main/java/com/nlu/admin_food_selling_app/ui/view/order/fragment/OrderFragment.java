@@ -14,13 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
-import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 import com.nlu.admin_food_selling_app.R;
-import com.nlu.admin_food_selling_app.ui.view.order.activity.SearchActivity;
 import com.nlu.admin_food_selling_app.data.model.Order;
 import com.nlu.admin_food_selling_app.helper.GetVariable;
 import com.nlu.admin_food_selling_app.ui.view.order.activity.AddNewOrder;
+import com.nlu.admin_food_selling_app.ui.view.order.activity.SearchActivity;
 import com.nlu.admin_food_selling_app.ui.view.order.adapter.OrderAdapter;
+import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 
 import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
@@ -72,13 +72,6 @@ public class OrderFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         getOrderList(0);
 
-//        SwipeRefreshLayout pullToRefresh = v.findViewById(R.id.refreshOrderView);
-//        pullToRefresh.setOnRefreshListener(() -> {
-//            getOrderList();
-//            adapter.notifyDataSetChanged();
-//            pullToRefresh.setRefreshing(true);
-//        });
-
         plusAction = v.findViewById(R.id.plusAction);
         plusAction.setOnClickListener(view -> {
             openAddOrderView();
@@ -88,6 +81,7 @@ public class OrderFragment extends Fragment {
         searchAction.setOnClickListener(view -> {
             openSearchOrderView();
         });
+
         return v;
     }
 
@@ -128,7 +122,6 @@ public class OrderFragment extends Fragment {
         };
         task.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, id);
     }
-
 
     public void getOrderList() {
         try {

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.widget.Toast;
 
 import com.amrdeveloper.lottiedialog.LottieDialog;
@@ -134,7 +135,7 @@ public class AuthenticationRepository {
             String role = responseList.getProperty("Role").toString();
             user = new User(uname, pass, email, role);
             if (user != null) {
-                SharedPreferences session = context.getSharedPreferences("ROLE_ADMIN", Context.MODE_PRIVATE);
+                SharedPreferences session = PreferenceManager.getDefaultSharedPreferences(context);
                 SharedPreferences.Editor editor = session.edit();
                 editor.putString("username", user.getUsername());
                 editor.putString("email", user.getEmail());

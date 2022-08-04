@@ -48,21 +48,12 @@
 
             <ImageView
                 android:id="@+id/sSearchAct"
-                android:layout_width="50dp"
-                android:layout_height="26dp"
-                android:layout_marginStart="288dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="356dp"
                 android:layout_marginTop="4dp"
                 android:src="@drawable/ic_baseline_search_24"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/sSort"
-                android:layout_width="42dp"
-                android:layout_height="33dp"
-                android:layout_marginEnd="16dp"
-                android:src="@drawable/ic_baseline_sort_24"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
