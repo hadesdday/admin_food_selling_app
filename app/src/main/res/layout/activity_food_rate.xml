@@ -6,78 +6,20 @@
     tools:context=".ui.view.food.activity.FoodRateActivity"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="8dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Đánh giá đồ ăn"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/purple_200">
-        </TextView>
+        android:layout_margin="8dp"
+        android:text="Danh sách bình luận"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/purple_500"
+        android:textAlignment="center"  />
 
-        <RatingBar
-            android:id="@+id/foodrate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_gravity="center"
-            android:numStars="5"
-            android:stepSize="0.5">
-        </RatingBar>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Bình luận"
-            android:textSize="20sp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:textColor="@color/purple_500">
-        </TextView>
-
-        <EditText
-            android:hint="Bình luận (tối đa 1000 ký tự)"
-            android:id="@+id/foodcomment"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:maxLength="1000"
-            android:inputType="text"
-            android:focusable="true"
-            android:autofillHints=""
-            tools:ignore="HardcodedText">
-        </EditText>
-
-        <Button
-            android:id="@+id/send"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center"
-            android:text="Gửi"
-            android:textSize="20sp"
-            android:gravity="center">
-        </Button>
-    </LinearLayout>
-
-    <LinearLayout
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ratelist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/ratelist"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </androidx.recyclerview.widget.RecyclerView>
-    </LinearLayout>
+    </androidx.recyclerview.widget.RecyclerView>
 </LinearLayout>
