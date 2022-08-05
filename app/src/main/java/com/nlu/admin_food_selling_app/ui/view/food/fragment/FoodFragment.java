@@ -4,11 +4,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +14,10 @@ import android.widget.PopupMenu;
 import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Food;
@@ -40,6 +39,8 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import es.dmoral.toasty.Toasty;
+
 public class FoodFragment extends Fragment {
     SearchView foodSearch;
     ImageButton foodAdd;
@@ -49,7 +50,8 @@ public class FoodFragment extends Fragment {
     ArrayList<Food> foodArrayList;
     FoodAdapter foodAdapter;
 
-    public FoodFragment() {}
+    public FoodFragment() {
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -159,7 +161,7 @@ public class FoodFragment extends Fragment {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(getActivity(), "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
+                Toasty.error(getActivity(), "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
                 makeSpinner();
                 exc = false;
@@ -222,7 +224,7 @@ public class FoodFragment extends Fragment {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(getActivity(), "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
+                Toasty.error(getActivity(), "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
                 makeRecyclerView();
                 exc = false;
@@ -250,7 +252,7 @@ public class FoodFragment extends Fragment {
                     @Override
                     public void onHold(View view, int position) {
                         DecimalFormat format = new DecimalFormat("###,###,###");
-                        Toast.makeText(getContext(),
+                        Toasty.info(getContext(),
                                 foodArrayList.get(position).getFoodName() +
                                         " - " + format.format(foodArrayList.get(position).getFoodPrice()) + "đ",
                                 Toast.LENGTH_SHORT).show();
@@ -277,7 +279,8 @@ public class FoodFragment extends Fragment {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {}
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
         });
     }
 }

@@ -14,6 +14,8 @@ import com.nlu.admin_food_selling_app.R;
 import com.nlu.admin_food_selling_app.data.model.Voucher;
 import com.nlu.admin_food_selling_app.data.repository.VoucherRepository;
 
+import es.dmoral.toasty.Toasty;
+
 public class VoucherInformation extends AppCompatActivity {
 
     ImageButton finishView;
@@ -49,7 +51,7 @@ public class VoucherInformation extends AppCompatActivity {
         vdStatus.setText(getResources().getStringArray(R.array.voucher_status_entries)[voucher.getActive() - 1]);
 
         deleteVoucher.setOnClickListener(view -> {
-            Toast.makeText(this, voucher.getId(), Toast.LENGTH_SHORT).show();
+            Toasty.info(this, voucher.getId(), Toast.LENGTH_SHORT).show();
             new AlertDialog.Builder(this)
                     .setTitle("Xóa voucher?")
                     .setMessage("Mã voucher " + voucher.getId() + " sẽ bị xóa?")

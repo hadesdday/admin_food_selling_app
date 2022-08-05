@@ -161,7 +161,8 @@ public class VoucherFragment extends Fragment {
                 }
 
                 Voucher v = new Voucher(id, rate, active);
-                voucherList.add(v);
+                if (!id.equals(" "))
+                    voucherList.add(v);
             }
         } catch (Exception e) {
             System.out.println("Get voucher list error " + e);

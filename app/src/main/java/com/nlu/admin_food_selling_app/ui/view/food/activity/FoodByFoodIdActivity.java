@@ -26,6 +26,8 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 
+import es.dmoral.toasty.Toasty;
+
 public class FoodByFoodIdActivity extends AppCompatActivity {
     TextView foodId, foodName, foodPrice, foodDescription;
     ImageView foodImage;
@@ -129,10 +131,10 @@ public class FoodByFoodIdActivity extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(FoodByFoodIdActivity.this,
+                Toasty.error(FoodByFoodIdActivity.this,
                         "Xóa dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
-                Toast.makeText(FoodByFoodIdActivity.this,
+                Toasty.success(FoodByFoodIdActivity.this,
                         "Xóa dữ liệu thành công. :)", Toast.LENGTH_LONG).show();
                 exc = false;
             }

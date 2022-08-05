@@ -26,6 +26,8 @@ import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.ArrayList;
 
+import es.dmoral.toasty.Toasty;
+
 public class UpdateFoodActivity extends AppCompatActivity {
     EditText foodName, foodDescription, foodImage, foodPrice;
     Spinner foodTypeList;
@@ -58,7 +60,7 @@ public class UpdateFoodActivity extends AppCompatActivity {
             foodImage.getText().toString().length() == 0 ||
             foodDescription.getText().toString().length() == 0 ||
             foodPrice.getText().toString().length() == 0)
-                Toast.makeText(this, "Oops!", Toast.LENGTH_SHORT).show();
+                Toasty.error(this, "Oops!", Toast.LENGTH_SHORT).show();
             else
                 new update().execute();
         });
@@ -115,7 +117,7 @@ public class UpdateFoodActivity extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(UpdateFoodActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
+                Toasty.error(UpdateFoodActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
                 makeSpinner();
                 exc = false;
@@ -165,10 +167,10 @@ public class UpdateFoodActivity extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(UpdateFoodActivity.this,
+                Toasty.error(UpdateFoodActivity.this,
                         "Cập nhật dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
-                Toast.makeText(UpdateFoodActivity.this,
+                Toasty.success(UpdateFoodActivity.this,
                         "Cập nhật dữ liệu thành công. :)", Toast.LENGTH_LONG).show();
                 exc = false;
             }

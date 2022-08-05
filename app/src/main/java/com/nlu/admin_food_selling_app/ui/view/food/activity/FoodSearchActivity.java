@@ -27,6 +27,8 @@ import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.util.ArrayList;
 
+import es.dmoral.toasty.Toasty;
+
 public class FoodSearchActivity extends AppCompatActivity {
     String s;
     TextView text;
@@ -102,7 +104,7 @@ public class FoodSearchActivity extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(FoodSearchActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
+                Toasty.error(FoodSearchActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
                 if (foodArrayListFiltered == null || foodArrayListFiltered.size() == 0)
                     text.setText(MessageFormat.format("Không có kết quả cho {0}", s));
@@ -134,7 +136,7 @@ public class FoodSearchActivity extends AppCompatActivity {
                     @Override
                     public void onHold(View view, int position) {
                         DecimalFormat format = new DecimalFormat("###,###,###");
-                        Toast.makeText(FoodSearchActivity.this,
+                        Toasty.info(FoodSearchActivity.this,
                                 foodArrayListFiltered.get(position).getFoodName() +
                                         " - " + format.format(foodArrayListFiltered.get(position).getFoodPrice()) + "đ",
                                 Toast.LENGTH_SHORT).show();
