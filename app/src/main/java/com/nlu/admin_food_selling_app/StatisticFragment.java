@@ -105,7 +105,7 @@ public class StatisticFragment extends Fragment {
                 entryList.add(new Entry(i + 1, Float.parseFloat(e)));
             }
 
-            LineChart chart = (LineChart) v.findViewById(R.id.chart);
+            LineChart chart = v.findViewById(R.id.chart);
             LineDataSet dataSet = new LineDataSet(entryList, "Doanh thu");
             LineData lineData = new LineData(dataSet);
             chart.setData(lineData);

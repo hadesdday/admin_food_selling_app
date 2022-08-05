@@ -27,8 +27,8 @@
             android:icon="@drawable/ic_email"
             android:title="Voucher" />
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@drawable/user_icon"
-            android:title="Tài khoản của tôi" />
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_exit"
+            android:title="Đăng xuất" />
     </group>
 </menu>
