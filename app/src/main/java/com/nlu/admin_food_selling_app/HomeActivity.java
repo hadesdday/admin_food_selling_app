@@ -1,10 +1,8 @@
 package com.nlu.admin_food_selling_app;
 
-import android.content.SharedPreferences;
+import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -16,7 +14,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.navigation.NavigationView;
-import com.nlu.admin_food_selling_app.ui.view.account.fragment.MyAccountFragment;
 import com.nlu.admin_food_selling_app.ui.view.customer.fragment.CustomerFragment;
 import com.nlu.admin_food_selling_app.ui.view.food.fragment.FoodFragment;
 import com.nlu.admin_food_selling_app.ui.view.order.fragment.OrderFragment;
@@ -91,10 +88,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 replaceFragment(new VoucherFragment());
                 mCurrentFragment = FRAGMENT_VOUCHER;
             }
-        } else if (id == R.id.nav_profile) {
+        } else if (id == R.id.nav_logout) {
             if (mCurrentFragment != FRAGMENT_PROFILE) {
-                replaceFragment(new MyAccountFragment());
-                mCurrentFragment = FRAGMENT_PROFILE;
+                Intent intent = new Intent(this, MainActivity.class);
+                startActivity(intent);
+                this.finish();
             }
         }
 
