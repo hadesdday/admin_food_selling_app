@@ -65,7 +65,7 @@ public class AuthenticationRepository {
                     context.startActivity(intent);
                     ((Activity) context).finish();
                 } else {
-                    Toasty.error(context, "Đăng nhập thất bại", Toast.LENGTH_SHORT, true).show();
+                    Toasty.error(context, "Tài khoản hoặc mật khẩu không đúng vui lòng nhập lại", Toast.LENGTH_SHORT, true).show();
                 }
             }
         };
