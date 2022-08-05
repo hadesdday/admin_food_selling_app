@@ -27,6 +27,8 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import es.dmoral.toasty.Toasty;
+
 public class FilteredFood extends AppCompatActivity {
     FoodType foodType;
     TextView text;
@@ -108,7 +110,7 @@ public class FilteredFood extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(FilteredFood.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
+                Toasty.error(FilteredFood.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
                 makeRecyclerView();
                 exc = false;
@@ -136,7 +138,7 @@ public class FilteredFood extends AppCompatActivity {
                     @Override
                     public void onHold(View view, int position) {
                         DecimalFormat format = new DecimalFormat("###,###,###");
-                        Toast.makeText(FilteredFood.this,
+                        Toasty.info(FilteredFood.this,
                                 foodArrayListFiltered.get(position).getFoodName() +
                                         " - " + format.format(foodArrayListFiltered.get(position).getFoodPrice()) + "đ",
                                 Toast.LENGTH_SHORT).show();

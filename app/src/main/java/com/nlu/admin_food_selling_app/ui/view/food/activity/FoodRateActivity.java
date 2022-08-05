@@ -31,6 +31,8 @@ import org.ksoap2.transport.HttpTransportSE;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+import es.dmoral.toasty.Toasty;
+
 public class FoodRateActivity extends AppCompatActivity {
     ArrayList<FoodRating> foodRatingArrayList;
     RecyclerView rateList;
@@ -98,7 +100,7 @@ public class FoodRateActivity extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(FoodRateActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
+                Toasty.error(FoodRateActivity.this, "Tải dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
                 makeRecyclerView();
                 exc = false;
@@ -167,10 +169,10 @@ public class FoodRateActivity extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(FoodRateActivity.this,
+                Toasty.error(FoodRateActivity.this,
                         "Xóa dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
-                Toast.makeText(FoodRateActivity.this,
+                Toasty.success(FoodRateActivity.this,
                         "Xóa dữ liệu thành công. :)", Toast.LENGTH_LONG).show();
                 exc = false;
             }

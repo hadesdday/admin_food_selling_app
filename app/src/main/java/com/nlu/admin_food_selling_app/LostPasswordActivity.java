@@ -35,7 +35,7 @@ public class LostPasswordActivity extends AppCompatActivity {
         });
 
         ActionBar actionBar = this.getSupportActionBar();
-        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#F7D716")));
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#FFF36120")));
         actionBar.setTitle("Quên mật khẩu");
         actionBar.setDisplayHomeAsUpEnabled(true);
     }

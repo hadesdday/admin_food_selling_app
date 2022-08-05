@@ -18,6 +18,8 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import es.dmoral.toasty.Toasty;
+
 public class FoodTypeAdd extends AppCompatActivity {
     EditText foodNameTxt;
     Button addButton;
@@ -32,7 +34,7 @@ public class FoodTypeAdd extends AppCompatActivity {
 
         addButton.setOnClickListener(view -> {
             if (foodNameTxt.getText().toString().length() == 0)
-                Toast.makeText(this, "Oops!", Toast.LENGTH_SHORT).show();
+                Toasty.error(this, "Oops!", Toast.LENGTH_SHORT).show();
             else {
                 new add().execute();
                 finish();
@@ -77,10 +79,10 @@ public class FoodTypeAdd extends AppCompatActivity {
                 this.dialog.dismiss();
 
             if (exc)
-                Toast.makeText(FoodTypeAdd.this,
+                Toasty.error(FoodTypeAdd.this,
                         "Cập nhật dữ liệu thất bại. :(", Toast.LENGTH_LONG).show();
             else {
-                Toast.makeText(FoodTypeAdd.this,
+                Toasty.success(FoodTypeAdd.this,
                         "Cập nhật dữ liệu thành công. :)", Toast.LENGTH_LONG).show();
                 exc = false;
             }
