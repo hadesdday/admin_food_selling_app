@@ -1,8 +1,10 @@
 package com.nlu.admin_food_selling_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.preference.PreferenceManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -38,6 +40,22 @@ public class MainActivity extends AppCompatActivity {
             String pass = passwordLogin.getText().toString();
             repository.loginTask(uname, pass);
         });
+
+        try {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            String username = preferences.getString("username", "");
+            String email = preferences.getString("email", "");
+            if (!username.isEmpty() && !email.isEmpty()) {
+                startHomeActivity();
+            }
+        } catch (Exception e) {
+            System.out.println("No user data stored");
+        }
+    }
+
+    public void startHomeActivity() {
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
     }
 
     public void lostPasswordActivity() {
