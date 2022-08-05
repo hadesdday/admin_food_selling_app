@@ -1,8 +1,12 @@
 package com.nlu.admin_food_selling_app;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -29,9 +33,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     private static final int FRAGMENT_FOOD = 3;
     private static final int FRAGMENT_SALE = 4;
     private static final int FRAGMENT_VOUCHER = 5;
-    private static final int FRAGMENT_PROFILE = 6;
+    private static final int LOGOUT = 6;
 
     private int mCurrentFragment = FRAGMENT_HOME;
+
+    TextView sessionUsername, sessionEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +57,20 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
         replaceFragment(new StatisticFragment());
         navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
+
+        try {
+            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+            String username = preferences.getString("username", "");
+            String email = preferences.getString("email", "");
+            View v = navigationView.getHeaderView(0);
+            sessionUsername = v.findViewById(R.id.sessionUsername);
+            sessionEmail = v.findViewById(R.id.sessionEmail);
+
+            sessionUsername.setText(username);
+            sessionEmail.setText(email);
+        } catch (Exception e) {
+            System.out.println("No user data logged in");
+        }
     }
 
 
@@ -89,7 +109,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 mCurrentFragment = FRAGMENT_VOUCHER;
             }
         } else if (id == R.id.nav_logout) {
-            if (mCurrentFragment != FRAGMENT_PROFILE) {
+            if (mCurrentFragment != LOGOUT) {
+                PreferenceManager.getDefaultSharedPreferences(getBaseContext()).edit().clear().apply();
                 Intent intent = new Intent(this, MainActivity.class);
                 startActivity(intent);
                 this.finish();
