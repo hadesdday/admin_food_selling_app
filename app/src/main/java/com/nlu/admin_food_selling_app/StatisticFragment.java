@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 
@@ -14,6 +15,8 @@ import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.highlight.Highlight;
+import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.nlu.admin_food_selling_app.utils.MarshalDouble;
 
 import org.ksoap2.SoapEnvelope;
@@ -22,8 +25,11 @@ import org.ksoap2.serialization.SoapPrimitive;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
+
+import es.dmoral.toasty.Toasty;
 
 public class StatisticFragment extends Fragment {
 
@@ -110,6 +116,19 @@ public class StatisticFragment extends Fragment {
             LineData lineData = new LineData(dataSet);
             chart.setData(lineData);
             chart.getDescription().setText("Biểu đồ doanh thu mỗi tháng trong năm");
+
+            chart.setOnChartValueSelectedListener(new OnChartValueSelectedListener() {
+                @Override
+                public void onValueSelected(Entry e, Highlight h) {
+                    float turnover = e.getY();
+                    DecimalFormat format = new DecimalFormat("###,###,###");
+                    Toasty.info(StatisticFragment.this.getContext(), "Doanh thu tháng " + e.getX() + " : " + format.format(turnover) + " VND", Toast.LENGTH_SHORT, true).show();
+                }
+
+                @Override
+                public void onNothingSelected() {
+                }
+            });
             chart.invalidate();
         } catch (Exception e) {
             System.out.println(e);
